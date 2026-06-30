@@ -5,12 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 header{
   display:flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom:80px;
+  position: relative;
 }
 .nav__left{
   display:flex;
@@ -31,31 +33,34 @@ header{
 .rectangle{
   position: relative;
   display: flex;
-
-  
+justify-content: center;
 }
 .button__shrunk{
   position:absolute;
   display:flex;
   gap:20px;
   left:90px;
-  top:270px;
+  top:110px;
   background: none;
   border:none;
   align-items: center;
-
 }
 .dottedline{
-  width:290px;
   position:absolute;
+  top:-150px;
+  left: -20px;
+  width:450px;
+  height:550px;
+  
+  
 }
 .dottedline2{
   position: absolute;
-  right:-80px;
-  top:50px;
-  width:600px;
- transform:rotate(90deg);
- margin: 20px;
+  right:-20px;
+  top:-150px;
+ width:450px;
+ height:550px;
+
 }
 .takeTest{
   display: flex;
@@ -66,6 +71,144 @@ header{
   margin:20px;
   position: absolute;
   right:85px;
-  top:190px;
+  top:90px;
   
 }
+.mainTitle{
+  position:absolute;
+  top:35%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  font-size:72px;
+  line-height:0.95;
+  font-weight:400;
+  text-align: center;
+  transition: transform 0.5s ease;
+}
+.description{
+  position:absolute;
+  left:40px;
+  bottom:-400px;
+  width:280px;
+  font-size:14px;
+  font-weight:400;
+  line-height:1.5;
+}
+
+.button__shrunk:hover ~.takeTest{
+  display:none;
+}
+.button__shrunk:hover ~.mainTitle{
+   transform:translate(-50% 10%);
+   transition:transform 0.4s ease;
+   font-size:50px;
+   text-align: center;
+   font-weight:800;
+}
+.button__shrunk:hover ~ .dottedline2{
+  display: none;
+}
+.takeTest:hover ~.button__shrunk{
+  display:none;
+}
+.takeTest:hover~.mainTitle{
+  transform :translate(-130px -60%);
+}
+.takeTest:hover .dottedline{
+  display:none;
+  opacity: 0;
+}
+.enterExperience{
+  display:none;
+}
+ @media (max-width:1024px){
+  .mainTitle{
+    font-size:60px;
+    top:45%;
+    left:50%;
+    transform:translate(-50% -50%);
+  }
+  .button__shrunk{
+    left:20px;
+    top:360px;
+  }
+  .takeTest{
+    right:30px;
+    top:360px;
+  }
+  .description{
+    bottom:100px;
+    width:260px;
+    font-size:14px;
+  }
+  .dottedline{
+    width:500px;
+left:-180px;
+top:120px;
+
+  }
+  .dottedline2{
+    width:500px;
+    right:-180px;
+    top:120px;
+  }
+ }
+ @media(max-width:768px){
+  .diamond,
+  .diamond__inner{
+    display:block;
+  }
+  .button__shrunk,
+  .takeTest,
+  .dottedline,
+  .dottedline2{
+    display:none;
+  }
+  .description{
+    position: static;
+    transform:none;
+width:320px;
+margin: 0 auto 25px;
+text-align: center;
+  }
+  .mainTitle{
+    position:static;
+    transform:none;
+    font-size:56px;
+    line-height:1;
+    margin: 0 ;
+  }
+  .rectangle{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    min-height:75vh;
+    text-align: center;
+  }
+ }
+ @media (max-width:480px){
+  .rectangle{
+    margin-top:-350px;
+  }
+  .mainTitle{
+    font-size:42px;
+    margin-bottom:8px;
+  }
+  .description{
+    width:240px;
+    font-size:14px;
+    margin-bottom:20px;
+  }
+  .diamond{
+    width:170px;
+    height:170px;
+  }
+  .diamond__inner{
+    width:140px;
+    height:140px;
+  }
+  .enterExperience{
+    display: block;
+  }
+ }
