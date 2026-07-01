@@ -1,0 +1,215 @@
+.diamond {
+    position: absolute;
+    width:500pxpx;
+    height: 500px;
+    border: 1px dashed #d8d8d8;
+    transform: rotate(45deg);
+
+  }
+  
+  .diamond1 {
+    width: 470px;
+    height:470px;
+    top:20px;
+    left:20px;
+    animation :rotateDiamond 30s linear infinite;
+  }
+.diamond2{
+    width:440px;
+    height:440px;
+    top:35px;
+    left:35px;
+animation :rotateDiamond 24s linear infinite;
+}
+.diamond3{
+    width:420px;
+    height:420px;
+    top:50px;
+    left:50px;
+    box-sizing: border-box;
+animation : rotateDiamond 18s linear infinite;
+}
+.content{
+position:absolute;
+top:180px;
+left: 150px;
+text-align:center;
+transform: translate(-50% 50%);
+z-index:10;
+width:190px;
+}
+.analysisContainer{
+    position :relative;
+    width:650px;
+    height:100vh;
+    margin-top:-110px;
+    margin-left:350px;
+}
+.nameInput{
+    width:290px;
+    border:none;
+    border-bottom: 1px solid #999;
+    outline:none;
+    background:transparent;
+    text-align: center;
+    font-size:48px;
+    color:#555;
+
+}
+.analysisleft{
+    margin:10px;
+}
+.backButton{
+    position:fixed;
+    left:20px;
+    bottom:35px;
+    z-index:999;
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    font-size:14px;
+    display:flex;
+    justify-content: space-between;
+    gap:20px;
+    align-items: center;
+}
+.nameInput::placeholder{
+    color:#777;
+}
+.buttons{
+    display:flex;
+    justify-content:space-around;
+}
+.proceedButton{
+    position:fixed;
+    right:20px;
+    bottom:35px;
+    z-index:999;
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    font-size:14px;
+    display:flex;
+    justify-content: space-between;
+    gap:20px;
+    align-items: center;
+}
+@keyframes rotateDiamond{
+    from{
+        transform:rotate(45deg);
+    }
+    to{
+        transform:rotate(405deg)
+    }
+}
+@media (max-width:1024px) {
+    .analysisContainer{
+    margin-left:0;
+    width:500px;
+    height:100vh;
+    }
+    .diamond {
+    position: absolute;
+    width:500px;
+    height: 500px;
+    border: 1px dashed #d8d8d8;
+    transform: rotate(45deg);
+    margin-left:280px;
+    margin-top:50px;
+    align-items: center;
+
+  }
+  .content{
+    top:260px;
+    left:360px;
+  }
+  .backButton{
+    top:80px;
+  }
+  .analysisleft{
+    margin:10px;
+    font-size:20px;
+    font-weight:200;
+  }
+}
+@media (max-width:768px){
+    .content{
+        top:200px;
+        left:160px;
+    }
+    .diamond{
+        margin-left:50px;
+        border: 1px dashed #d8d8d8;
+
+    }
+    .nameInput{
+        width:380px;
+        right:-50px;
+    }
+    .backButton{
+        top:450px;
+    }
+    .diamond1{
+        width:420px;
+        height:420px;
+    }
+    .diamond2{
+        width:380px;
+        height:380px;
+    }
+    .diamond3{
+        width:370px;
+        height:370px;
+    }
+    .analysisContainer{
+        margin-top:10px;
+    }
+}
+@media (max-width:480px){
+    .diamond{
+        width:250px;
+        height:250px;
+        margin-left:40px;
+        margin-top:140px;
+            border: 1px dashed #d8d8d8;
+
+    }
+    .content{
+        top:180px;
+        left:50px;
+    }
+    .backButton{
+        top:400px;
+    }
+    .diomaond1{
+        width:230px;
+        height:230px;
+            border: 1px dashed #d8d8d8;
+
+    }
+    .diamond2{
+        width:190px;
+        height:190px;
+            border: 1px dashed #d8d8d8;
+
+    }
+    .diamond3{
+        width:160px;
+        height:160px;
+            border: 1px dashed #d8d8d8;
+
+    }
+    .contentpara{
+        position:absolute;
+        text-align: center;
+        top:20px;
+        left:80px;
+        
+    }
+    .nameInput{
+        position: absolute;
+        top:50px;
+        left:10px;
+        margin-top:10px;
+    }
+}

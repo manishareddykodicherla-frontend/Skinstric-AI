@@ -1,24 +1,20 @@
 import React from 'react'
-import {useState} from 'react';
-import Styles from"../index.css"
+import {useNavigate} from 'react-router-dom';
+import "./Homepage.css"
 import buttinIcon from "../assets/buttin-icon-shrunk.png";
 import right from "../assets/right.png"
+import Header from './Header';
 import left from "../assets/Rectangle 2778 (2).png"
 
 export default function Homepage() {
-  const [isDiscoverHover, setIsDiscoverHover]= useState(false);
-  const[isTakeTestHover, setIsTakeTestHover]= useState(false);
+ 
+  const naviagte= useNavigate();
   return (
     <div>
-        <header>
-        <div className="nav__left"> 
-    <h1>SKINSTRIC</h1> <span>[intro]</span>
-    </div>
-    <button className="enter__code">Entercode</button>
-</header>
+        <Header/>
 <div className="rectangle">
-  <div className="diamond"> </div>
-  <div className="diamond__inner"></div>
+  <div className="homeDiamond"> 
+  <div className="homeDiamond__inner">
   <img src={right} alt="dotted" className="dottedline"/>
   <button className="button__shrunk"> 
     <img src={buttinIcon} alt=""></img>
@@ -26,7 +22,7 @@ export default function Homepage() {
     </button>
 <h1 className="mainTitle"> Sophisticated <br/>skincare</h1>
 <img src={left} alt="dotted" className='dottedline2'/>
-<button className="takeTest">
+<button className="takeTest" onClick={()=>naviagte("/testing")}>
   <img src={buttinIcon} alt=""/>
   <span>Taketest</span>
 </button>
@@ -37,9 +33,10 @@ highly-personalized routine tailored to
 what your skin needs.
 
 </h2>
-<button  className="enterExperience">ENTER EXPERIENCE</button>
+<button  className="enterExperience" onClick={()=>naviagte("/testing")}>ENTER EXPERIENCE</button>
 </div>
-    
+    </div>
+    </div>
     </div>
   )
 }
