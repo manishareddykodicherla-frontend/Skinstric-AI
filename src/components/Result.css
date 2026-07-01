@@ -1,0 +1,166 @@
+header{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom:20px;
+  position: relative;
+}
+.nav__left{
+  display:flex;
+  align-items: center;
+  gap:20px;
+  margin:20px;
+}
+
+.enter__code{
+  background: green;
+  color:white;
+  width:92px;
+  height:32px;
+  margin:10px;
+  text-align: center;
+}
+.resultsContainer{
+  display:flex;
+  justify-content:space-around;
+}
+.reslutsCamera{
+    position: relative;
+width:50%;
+height:50%;
+  }
+  
+  .cameraDiamond1 {
+    position:absolute;
+    width: 420px;
+    height:420px;
+    top:20px;
+    left:20px;
+    animation :cameraRotate 30s linear infinite;
+    border: 1px dashed #d8d8d8;
+
+  }
+  .camera{
+    animation :none;
+    position :absolute;
+    top:80px;
+    left:60px;
+  }
+.cameraDiamond2{
+  position:absolute;
+    width:380px;
+    height:380px;
+    top:35px;
+    left:35px;
+animation :cameraRotate 24s linear infinite;
+    border: 1px dashed #d8d8d8;
+
+}
+.cameraDiamond3{
+  position:absolute;
+    width:350px;
+    height:350px;
+    top:50px;    
+    border: 1px dashed #d8d8d8;
+
+    left:50px;
+    box-sizing: border-box;
+animation : cameraRotate 18s linear infinite;
+}
+.resultsGallery{
+      position: relative;
+      width:50%;
+      height:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+}
+.galleryDiamond1 {
+    position:absolute;
+    width: 420px;
+    height:420px;
+    top:20px;
+    left:20px;
+    animation :cameraRotate 30s linear infinite;
+    border: 1px dashed #d8d8d8;
+
+  }
+  .gallery{
+    animation :none;
+    position :absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:2;
+    pointer-events:none;
+  }
+
+.ellipse1,
+.ellipse2 {
+  display:block;
+  object-fit:contain;
+}
+
+.ellipse1 {
+  width:180px;
+  height:180px;
+}
+
+.ellipse2 {
+  width:90px;
+  height:90px;
+  position:absolute;
+  z-index:3;
+  object-fit:contain;
+  filter: brightness(1.4) contrast(2.0) saturate(1.2);
+  background: rgba(255,255,255,0.95);
+  border-radius: 50%;
+  padding: 12px;
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.9);
+}
+.galleryDiamond2{
+  position:absolute;
+    width:380px;
+    height:380px;
+    top:35px;
+    left:35px;
+animation :cameraRotate 24s linear infinite;
+    border: 1px dashed #d8d8d8;
+
+}
+.ellipse2{
+  opacity:1;
+  visibility:visible;
+  animation:none; 
+  border: 2px solid rgb(0, 89, 255);
+}
+.galleryDiamond3{
+  position:absolute;
+    width:350px;
+    height:350px;
+    top:50px;    
+    border: 1px dashed #d8d8d8;
+
+    left:50px;
+    box-sizing: border-box;
+animation : cameraRotate 18s linear infinite;
+}
+@keyframes cameraRotate{
+    from{
+        transform:rotate(45deg);
+    }
+    to{
+        transform:rotate(405deg)
+    }
+}
+
+
+  
+  
+@media (max-width:768px){
+  .header{
+    display: flex;
+    justify-content: space-between;
+  }
+}

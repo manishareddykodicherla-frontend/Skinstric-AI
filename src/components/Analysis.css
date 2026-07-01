@@ -126,6 +126,9 @@ width:190px;
   .backButton{
     top:80px;
   }
+  .proceedButton{
+    top:80px;
+  }
   .analysisleft{
     margin:10px;
     font-size:20px;
@@ -149,6 +152,9 @@ width:190px;
     .backButton{
         top:450px;
     }
+    .proceedButton{
+        top:450px;
+    }
     .diamond1{
         width:420px;
         height:420px;
@@ -169,21 +175,22 @@ width:190px;
     .diamond{
         width:250px;
         height:250px;
-        margin-left:40px;
-        margin-top:140px;
+        margin-left:100px;
+        margin-top:150px;
             border: 1px dashed #d8d8d8;
 
     }
     .content{
         top:180px;
-        left:50px;
+        left:90px;
     }
     .backButton{
         top:400px;
     }
+    
     .diomaond1{
-        width:230px;
-        height:230px;
+        width:220px;
+        height:220px;
             border: 1px dashed #d8d8d8;
 
     }
@@ -209,7 +216,11 @@ width:190px;
     .nameInput{
         position: absolute;
         top:50px;
-        left:10px;
+        left:0px;
         margin-top:10px;
+        
+    }
+    .proceedButton{
+        top:400px;
     }
 }

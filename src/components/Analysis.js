@@ -129,7 +129,7 @@ catch (error) {
                 <img src={buttinIcon} alt="" />
                 <span>Back</span>
             </button>
-            <button className="proceedButton" onClick={() => setStep("done")}>
+            <button className="proceedButton" onClick={() => navigate("/Result")}>
                 <img src={buttinIcon} alt=""/>
                 <span>Proceed</span>
             </button>
