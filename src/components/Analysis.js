@@ -66,6 +66,8 @@ catch (error) {
     console.error("Error submitting analysis:", error);
 }
     };
+    const canProceed = name.trim() !== "" && location.trim() !== "";
+
     return (
         <div>
             <Header />
@@ -129,10 +131,12 @@ catch (error) {
                 <img src={buttinIcon} alt="" />
                 <span>Back</span>
             </button>
-            <button className="proceedButton" onClick={() => navigate("/Result")}>
-                <img src={buttinIcon} alt=""/>
-                <span>Proceed</span>
-            </button>
+            {canProceed && (
+                <button className="proceedButton" onClick={() => navigate("/Result")}>
+                    <img src={buttinIcon} alt=""/>
+                    <span>Proceed</span>
+                </button>
+            )}
             </div>
         </div>
     );

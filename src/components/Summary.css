@@ -1,0 +1,106 @@
+.summaryHeader{
+    margin-bottom:50px;
+}
+.summarySmallTitle{
+    font-size:14px;
+    font-weight:400;
+    letter-spacing:2px;
+    color:#555555;
+    margin-bottom:10px;
+}
+.summaryTitle{
+    font-size:72px;
+    font-weight:200px;
+    letter-spacing:2px;
+    margin:0;
+}
+.summarySubtitle{
+    font-size:14px;
+    letter-spacing:2px;
+    color:#666;
+    margin-top: 5px;
+}
+.summaryContent{
+    display:flex;
+    justify-content:space-between;
+    align-items: flex-start;
+    gap:50px;
+}
+.summaryLeft{
+    width:18%;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+.summaryCenter{
+    width:52%;
+}
+.centerContent{
+    display:flex;
+}
+.confidenceCircle{
+    width:290px;
+    height:290px;
+    border-radius: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    background: conic-gradient(#d9d9d9 0deg, #d9d9d9 var(--progress, 0deg), #f2f2f2 var(--progress, 0deg), #f2f2f2 360deg);
+    box-shadow: inset 0 0 0 10px #f2f2f2;
+}
+
+.confidenceCircle::before {
+    content:"";
+    position:absolute;
+    inset:16px;
+    border-radius:50%;
+    background:white;
+}
+
+.confidenceCircle h2 {
+    position:relative;
+    z-index:1;
+    margin:0;
+    color:#333;
+}
+.summaryRight{
+    width:30%;
+}
+.rightPanel{
+    background:#f8f8f8;
+    border:1px solid #e4e4e4;
+    border-radius:12px;
+    padding:16px;
+}
+.rightPanel h3{
+    margin-top:0;
+    margin-bottom:12px;
+    font-size:18px;
+}
+.dataGroup{
+    margin-bottom:14px;
+}
+.dataGroup h4{
+    margin:0 0 8px;
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#444;
+}
+.metricRow{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:8px;
+    padding:4px 0;
+    border-bottom:1px solid #ececec;
+    font-size:14px;
+}
+.metricName{
+    color:#333;
+}
+.metricValue{
+    font-weight:600;
+    color:#0059ff;
+}
