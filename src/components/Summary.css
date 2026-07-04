@@ -1,5 +1,6 @@
 .summaryHeader{
-    margin-bottom:50px;
+    margin:10px;
+    transform: translateY(-40px);
 }
 .summarySmallTitle{
     font-size:14px;
@@ -22,10 +23,13 @@
 }
 .summaryContent{
     display:flex;
-    justify-content:space-between;
+    justify-content:space-around;
     align-items: flex-start;
     gap:50px;
+    min-height:calc(100vh - 120px);
+    padding-bottom: 24px;
 }
+
 .summaryLeft{
     width:18%;
     display:flex;
@@ -34,13 +38,55 @@
 }
 .summaryCenter{
     width:52%;
+    margin-bottom:180px;
+    background-color: #d9d9d9;
+    padding:80px;
+    border:none;
+    border-top:black;
 }
 .centerContent{
     display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
 }
+
+.centerDiamondWrapper {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    pointer-events:none;
+}
+
+.centerDiamond {
+    position:absolute;
+    width: 24px;
+    height: 24px;
+    background: #0059ff;
+    transform: rotate(45deg);
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.center {
+    position:relative;
+    z-index:2;
+    color:#333;
+    font-size:18px;
+    font-weight:600;
+    padding: 10px 18px;
+    top:-240px;
+    left:-260px;
+}
+
 .confidenceCircle{
-    width:290px;
-    height:290px;
+        transform: translateY(-110px);
+    width:400px;
+    height:400px;
     border-radius: 50%;
     display:flex;
     justify-content: center;
@@ -66,11 +112,11 @@
 }
 .summaryRight{
     width:30%;
+    
 }
 .rightPanel{
     background:#f8f8f8;
-    border:1px solid #e4e4e4;
-    border-radius:12px;
+    border-top:1px solid #0f0f0f;
     padding:16px;
 }
 .rightPanel h3{
@@ -79,7 +125,8 @@
     font-size:18px;
 }
 .dataGroup{
-    margin-bottom:14px;
+    margin-top:14px;
+    border:none;
 }
 .dataGroup h4{
     margin:0 0 8px;
@@ -93,14 +140,210 @@
     justify-content:space-between;
     align-items:center;
     gap:8px;
-    padding:4px 0;
+    padding:12px 0;
     border-bottom:1px solid #ececec;
     font-size:14px;
+    cursor:pointer;
+    transition: background 0.2s ease, color 0.2s ease;
 }
+
+.metricRow {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px 0;
+    border-bottom:1px solid #ececec;
+    font-size:14px;
+    cursor:pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.metricRow.selected {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.metricRow.selected .metricName,
+.metricRow.selected .metricValue {
+    color: #222;
+}
+
+.metricDiamond {
+    display:inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    background: #d9d9d9;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.metricDiamond.selected {
+    background: #000;
+    transform: rotate(45deg) scale(1.1);
+}
+
 .metricName{
     color:#333;
+    flex:1;
 }
 .metricValue{
     font-weight:600;
     color:#0059ff;
+}
+
+.activeCard{
+    padding:20px;
+    width:60px;
+    height:60px;
+    background: black;
+    color:white;
+}
+.race{
+    margin:0px;
+    
+}
+.raceName{
+    
+    margin: 0;
+}
+.activeCard1{
+    width:60px;
+    height:60px;
+    background-color: #e1dfdfcc;
+    color:white;
+    margin-top:10px;
+    border-top: 1px solid black;
+color:black;
+padding:20px;
+
+}
+.predictionHeading{
+    display:flex;
+    justify-content: space-between;
+}
+
+.summaryFooter {
+    position: relative;
+
+    padding: 14px 24px;
+    margin-top: 16px;
+}
+
+.summaryFooterInner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.footerButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-size: 14px;
+    cursor: pointer;
+    
+    
+}
+
+.footerIconButton img {
+    width: 42px;
+    height: 42px;
+}
+
+
+
+@media (max-width:1024px){
+    .summaryContent{
+        margin:20px;
+    }
+    .summaryCenter{
+        width:52%;
+        height:600px;
+        position:relative;
+    
+    }
+    .centerDiamondWrapper{
+        position:relative;
+    }
+    .confidenceCircle{
+        position:absolute;
+        top:350px;
+        left:40px;
+
+    }
+    .center{
+        position:absolute;
+        top:-80px;
+        right:-80px;
+    }
+    .summaryFooter{
+        position:relative;
+    }
+    .summaryFooterInner{
+        
+        transform:translateY(-380px);
+    }
+}
+
+@media (max-width: 768px) {
+    .confidenceCircle{
+        width:240px;
+        left:-20px;
+        top:80px;
+    }
+    .summaryFooterInner {
+        margin-top:50px;
+        flex-direction: column;
+        
+    }
+.summaryCenter{
+    height:450px;
+}
+    .footerButton {
+        width: 100%;
+    }
+}
+@media (max-width:480px){
+    .summaryContent{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+    }
+    .infoCard{
+width:100%
+    }
+    .activeCard{
+        width:190px;
+        height:80px;
+    }
+    .activeCard1{
+        width:190px;
+        height:80px;
+    }
+.summaryCenter{
+    margin-left:10px;
+}
+    .summaryRight{
+        width:100%;
+        margin-left:10px;
+        margin-top:-100px;
+    }
+    .summarySmallTitle{
+        font-size:20px;
+    }
+    .summaryTitle{
+        font-size:20px;
+    }
+    .summaryLeft{
+        margin-left:-180px;
+        
+    }
+    
 }

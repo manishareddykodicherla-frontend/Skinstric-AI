@@ -32,7 +32,6 @@ header{
   right:20px;
   width:90px;
   height:80px;
-  border:2px solid #0059ff;
   border-radius:16px;
   background:#ffffff;
   display:flex;
@@ -322,6 +321,19 @@ animation :cameraRotate 24s  infinite;
     box-sizing: border-box;
 animation : cameraRotate 18s  infinite;
 }
+.proceedbutton{
+  position:absolute;
+  right:80px;
+  bottom:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
+  border:none;
+}
+.proceed{
+  font-size:18px;
+}
 @keyframes cameraRotate{
     from{
         transform:rotate(45deg);
@@ -421,11 +433,16 @@ animation : cameraRotate 18s  infinite;
     display:flex;
     align-items: center;
     gap:10px;
-    position:absolute;
-    right:80px;
-    bottom:80px;
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    left: auto;
+    top: auto;
     border:none;
-    background-color: none;
+    background: transparent;
+    z-index: 20;
+    cursor: pointer;
+    padding: 12px 18px;
   }
   .proceed{
     font-size:28px;
@@ -501,4 +518,49 @@ animation : cameraRotate 18s  infinite;
     padding: 6px 10px;
     top: calc(50% + 48px);
   }
+}
+@media (max-width:480px){
+  .resultsContainer{
+    gap:5px;
+  }
+  .reslutsCamera{
+    margin-left:20px;
+    transform: translateX(50px);
+    top:-80px;
+  }
+  .cameraDiamond1{
+    margin:20px;
+  }
+  .cameraIcon{
+    position:absolute;
+    top:-10px;
+    
+  }
+  .gallery{
+width:320px;
+height:320px;
+  }
+  .resultsGallery{
+    top:-230px;
+  }
+  .proceedbutton{
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    font-size: 12px;
+    background: transparent;
+    gap: 6px;
+  }
+  .proceed{
+    display: inline;
+    font-size: 16px;
+  }
+  .ellipse2{
+    position:absolute;
+    top:50px;
+    left:150px;
+    width:100px;
+    height:100px;
+  }
+
 }

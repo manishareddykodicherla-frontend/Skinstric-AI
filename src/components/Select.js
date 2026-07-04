@@ -12,10 +12,10 @@ const analysis =location.state?.analysis;
     <div>
         <Header/>
         <div className="pageHighlight">
-          <div>
-            <h2>A.I.ANALYSIS</h2>
-            <h4>A.I. has estimated the following.</h4>
-            <h5>Fix estimated information if needed.</h5>
+          <div className="para">
+            <h2 className="title">A.I.ANALYSIS</h2>
+            <h4 classname="smallTitle">A.I. has estimated the following.</h4>
+            <h5 className="sub-title">Fix estimated information if needed.</h5>
             </div>
         
         <div className="selectDiamondContainer">

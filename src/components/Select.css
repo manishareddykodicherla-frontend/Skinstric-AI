@@ -44,3 +44,53 @@
     left:140px;
     top:280px;
 }
+
+@media (max-width:1024px){
+    .selectDiamondContainer{
+        width:800px;
+        height:800px;
+        top:150px;
+        left:50px;
+
+    }
+    .selectDiamond{
+        width:180px;
+        height:180px;
+    }
+    .para{
+        margin-left:50px;
+    }
+    .title{
+        font-size:26px;
+    }
+    .smallTitle{
+        font-size: 20px;
+    }
+    .sub-title{
+        font-size:18px;
+    }
+}
+@media (max-width:768px){
+    .selectDiamondContainer{
+        width:450px;
+        height:450px;
+        top:150px;
+        left:-20px;
+    }
+    .selectDiamond{
+        width:170px;
+        height:170px;
+    }
+} 
+@media (max-width:480px){
+    .selectDiamondContainer{
+        width:350px;
+        height:350px;
+        top:150px;
+        left:-150px;
+    }
+    .selectDiamond{
+        width:180px;
+        height:180px;
+    }
+}
