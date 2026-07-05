@@ -29,17 +29,17 @@ const navigate = useNavigate();
             </div>
         
         <div className="selectDiamondContainer">
-          <div className="selectDiamond top" onClick={()=>navigate("/Summary")}>
-            <span> DEMOGRAPHICS</span>
+          <div className="selectDiamond top" onClick={handleDemographicsClick}>
+             DEMOGRAPHICS
           </div>
           <div className="selectDiamond left">
-<span>  COSMETIC CONCERNS</span>
+COSMETIC CONCERNS
           </div>
           <div className="selectDiamond right">
-<span>  SKIN TYPE DETAIL</span>
+ SKIN TYPE DETAILS
           </div>
           <div className="selectDiamond bottom">
-          <span>  WEATHER</span>
+            WEATHER
           </div>
         </div>
     </div>

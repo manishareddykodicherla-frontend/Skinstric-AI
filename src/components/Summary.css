@@ -46,11 +46,13 @@
   justify-content: center;
 }
 
-.centerContent{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    position:relative;
+.centerContent {
+  width: 100%;
+  min-height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .centerDiamondWrapper {
@@ -75,14 +77,12 @@
 }
 
 .center {
-    position:relative;
-    z-index:2;
-    color:#333;
-    font-size:18px;
-    font-weight:600;
-    padding: 10px 18px;
-    top:-240px;
-    left:-260px;
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  color: #333;
+  font-size: 28px;
+  font-weight: 600;
 }
 
 .confidenceCircle {
@@ -281,8 +281,8 @@ padding:20px;
     }
     .center{
         position:absolute;
-        top:-80px;
-        right:-80px;
+        top:-240px;
+        left:-260px;
     }
     .summaryFooter{
         position:relative;

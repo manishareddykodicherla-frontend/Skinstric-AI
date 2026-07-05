@@ -30,14 +30,11 @@ animation :rotateDiamond 24s linear infinite;
 animation : rotateDiamond 18s linear infinite;
 }
 
-.content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  text-align: center;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  width: 420px;
+.analysisContainer {
+  position: relative;
+  width: 650px;
+  height: 650px;
+  margin: 40px auto 0;
 }
 .analysisContainer{
     position :relative;
@@ -115,11 +112,13 @@ animation : rotateDiamond 18s linear infinite;
     }
 }
 @media (max-width:1024px) {
-    .analysisContainer{
-    margin-left:0;
-    width:500px;
-    height:100vh;
-    }
+    .analysisContainer {
+  position: relative;
+  width: min(650px, 90vw);
+  height: min(650px, 90vw);
+  margin: 40px auto 0;
+}
+
     .diamond {
     position: absolute;
     width:500px;
@@ -131,10 +130,13 @@ animation : rotateDiamond 18s linear infinite;
     align-items: center;
 
   }
-  .content{
-    top:260px;
-    left:360px;
-  }
+  .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
   .backButton{
     top:80px;
   }
