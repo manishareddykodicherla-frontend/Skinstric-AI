@@ -30,16 +30,16 @@ const navigate = useNavigate();
         
         <div className="selectDiamondContainer">
           <div className="selectDiamond top" onClick={handleDemographicsClick}>
-             DEMOGRAPHICS
+            <span> DEMOGRAPHICS</span>
           </div>
           <div className="selectDiamond left">
-COSMETIC CONCERNS
+<span>  COSMETIC CONCERNS</span>
           </div>
           <div className="selectDiamond right">
- SKIN TYPE DETAILS
+<span>  SKIN TYPE DETAIL</span>
           </div>
           <div className="selectDiamond bottom">
-            WEATHER
+          <span>  WEATHER</span>
           </div>
         </div>
     </div>
