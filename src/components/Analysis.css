@@ -103,6 +103,28 @@ animation : rotateDiamond 18s linear infinite;
     gap:20px;
     align-items: center;
 }
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+}
+.nameInput {
+  width: min(520px, 80vw);
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #999;
+  outline: none;
+  background: transparent;
+  font-size: 48px;
+  color: #777;
+  position: relative;
+  z-index: 11;
+}
+
+
 @keyframes rotateDiamond{
     from{
         transform:rotate(45deg);
