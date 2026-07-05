@@ -75,20 +75,39 @@ export default function Result() {
 
     const openCameraPicker = async () => {
         if (!navigator.mediaDevices?.getUserMedia) {
-            window.alert('Camera is not supported on this device.');
+            window.alert('Camera is not supported on this device or browser.');
             return;
         }
 
         try {
+            // Check if HTTPS or localhost (required for camera access)
+            if (window.location.protocol !== 'https:' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+                window.alert('Camera access requires HTTPS or localhost. Please use a secure connection.');
+                return;
+            }
+
             const stream = await navigator.mediaDevices.getUserMedia({
-                video: { facingMode: 'user' },
+                video: { 
+                    facingMode: 'user',
+                    width: { ideal: 1280 },
+                    height: { ideal: 720 }
+                },
                 audio: false,
             });
             setCameraStream(stream);
             setIsCameraOpen(true);
         } catch (error) {
             console.error('Failed to open camera:', error);
-            window.alert('Unable to access the camera. Please allow permission or use gallery upload.');
+            
+            if (error.name === 'NotAllowedError') {
+                window.alert('Camera permission was denied. Please allow camera access and try again.');
+            } else if (error.name === 'NotFoundError') {
+                window.alert('No camera found on this device.');
+            } else if (error.name === 'NotReadableError') {
+                window.alert('Camera is already in use by another application.');
+            } else {
+                window.alert('Unable to access the camera. Please allow permission or use gallery upload.');
+            }
         }
     };
 
@@ -214,14 +233,10 @@ export default function Result() {
     </div>
 </div>
         <div className="gallery">
-            {previewImage ? (
+            {!previewImage ? (
+                <img src={Ellipse2} alt="Upload from gallery" className="ellipse2" onClick={openGalleryPicker} />
+            ) : (
                 <>
-                    <img
-                        src={previewImage}
-                        alt=""
-                        className="galleryPreviewImage"
-                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                    />
                     {isAnalyzing ? (
                         <div className="analysisStatus">Preparing for analysis...</div>
                     ) : (
@@ -234,8 +249,6 @@ export default function Result() {
                         onClick={openGalleryPicker}
                     />
                 </>
-            ) : (
-                <img src={Ellipse2} alt="Upload from gallery" className="ellipse2" onClick={openGalleryPicker} />
             )}
             <input type="file" accept="image/*" ref={fileInputRef} style={{display:"none"}} onChange={handleImageUpload}/>
         </div>

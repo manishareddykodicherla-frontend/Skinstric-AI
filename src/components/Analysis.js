@@ -121,7 +121,7 @@ catch (error) {
                     ) : (
                         <>
 
-                            <p className="thankYouText">Thank you for submission</p>
+                            <p className="thankYouText">Proceed for the next step</p>
                         </>
                     )}
                 </div>

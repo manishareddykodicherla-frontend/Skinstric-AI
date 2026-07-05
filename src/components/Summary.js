@@ -3,14 +3,23 @@ import Header from './Header';
 import "./Summary.css";
 import buttonIcon from"../assets/buttin-icon-shrunk.png";
 import Button from "../assets/button.png";
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 export default function Summary() {
         const navigate=useNavigate();
+        const location = useLocation();
 
-
-    const [analysisData, setAnalysisData] = useState(null);
+    const [analysisData, setAnalysisData] = useState(() => {
+        try {
+            const stored = localStorage.getItem('skinstricAnalysis');
+            return stored ? JSON.parse(stored) : null;
+        } catch (error) {
+            console.error('Failed to parse stored analysis:', error);
+            return null;
+        }
+    });
     const [selectedRace, setSelectedRace] = useState('');
     const [selectedRaceScore, setSelectedRaceScore] = useState(0);
+    const [isLoading, setIsLoading] = useState(!analysisData);
 
     const getHighestValue = (obj) => {
         const entries = Object.entries(obj);
@@ -23,14 +32,27 @@ export default function Summary() {
     };
 
     useEffect(() => {
-        const stored = localStorage.getItem('skinstricAnalysis');
-        if (stored) {
-            setAnalysisData(JSON.parse(stored));
+        const routeAnalysis = location?.state?.analysis;
+        if (routeAnalysis) {
+            setAnalysisData(routeAnalysis);
+            localStorage.setItem('skinstricAnalysis', JSON.stringify(routeAnalysis));
+            setIsLoading(false);
+            return;
         }
-    }, []);
+
+        try {
+            const stored = localStorage.getItem('skinstricAnalysis');
+            if (stored) {
+                setAnalysisData(JSON.parse(stored));
+            }
+        } catch (error) {
+            console.error('Failed to parse stored analysis:', error);
+        }
+        setIsLoading(false);
+    }, [location?.state?.analysis]);
 
     useEffect(() => {
-        if (analysisData) {
+        if (analysisData?.data) {
             const race = analysisData?.data?.race || {};
             const [name, score] = getHighestValue(race);
             setSelectedRace(name);
@@ -38,8 +60,30 @@ export default function Summary() {
         }
     }, [analysisData]);
 
-    if (!analysisData) {
+    if (isLoading) {
         return <h2>Loading...</h2>;
+    }
+
+    if (!analysisData?.data) {
+        return (
+            <div>
+                <Header />
+                <div className="summaryHeader">
+                    <p className="summarySmallTitle">A.I.ANALYSIS</p>
+                    <h1 className="summaryTitle">DEMOGRAPHICS</h1>
+                </div>
+                <div className="summaryContent">
+                    <p>No analysis data is available yet. Please go back and complete the analysis first.</p>
+                </div>
+                <div className="summaryFooter">
+                    <div className="summaryFooterInner">
+                        <button type="button" className="footerButton footerIconButton" onClick={() => navigate('/Select')}>
+                            <img src={buttonIcon} alt="Icon button" /><span>Back</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        );
     }
 
     const race = analysisData?.data?.race || {};
@@ -86,7 +130,7 @@ export default function Summary() {
                 <div className="summaryLeft">
                     <div className="infoCard activeCard">
                         <p className="race">Race</p>
-                        <h4 classNAme="raceName">{raceName}</h4>
+                        <h4 className="raceName">{raceName}</h4>
                     </div>
                     <div className="infoCard activeCard1">
                         <p>Age</p>

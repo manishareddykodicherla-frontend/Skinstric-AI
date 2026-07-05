@@ -1,6 +1,6 @@
 .diamond {
     position: absolute;
-    width:500pxpx;
+    width:500px;
     height: 500px;
     border: 1px dashed #d8d8d8;
     transform: rotate(45deg);
@@ -29,14 +29,15 @@ animation :rotateDiamond 24s linear infinite;
     box-sizing: border-box;
 animation : rotateDiamond 18s linear infinite;
 }
-.content{
-position:absolute;
-top:180px;
-left: 150px;
-text-align:center;
-transform: translate(-50% 50%);
-z-index:10;
-width:190px;
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 420px;
 }
 .analysisContainer{
     position :relative;
@@ -46,15 +47,14 @@ width:190px;
     margin-left:350px;
 }
 .nameInput{
-    width:290px;
-    border:none;
-    border-bottom: 1px solid #999;
-    outline:none;
-    background:transparent;
-    text-align: center;
-    font-size:48px;
-    color:#555;
-
+     width: 420px;
+  border: none;
+  border-bottom: 1px solid #999;
+  outline: none;
+  background: transparent;
+  text-align: center;
+  font-size: 48px;
+  color: #555;
 }
 .analysisleft{
     margin:10px;
@@ -84,6 +84,9 @@ width:190px;
 }
 .nameInput::placeholder{
     color:#777;
+    opacity:1;
+    white-space:nowrap;
+    overflow:visible;
 }
 .buttons{
     display:flex;
@@ -155,8 +158,9 @@ width:190px;
 
     }
     .nameInput{
-        width:380px;
-        right:-50px;
+        width:min(380px, 80vw);
+        right:auto;
+        transform:none;
     }
     .backButton{
         top:450px;
@@ -225,9 +229,11 @@ width:190px;
     .nameInput{
         position: absolute;
         top:50px;
-        left:0px;
+        left:50%;
+        transform:translateX(-50%);
         margin-top:10px;
-        
+        width:min(250px, 78vw);
+        font-size:24px;
     }
     .proceedButton{
         top:400px;

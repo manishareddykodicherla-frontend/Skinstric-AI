@@ -19,13 +19,13 @@ export default function Homepage() {
   <img src={right} alt="dotted" className="dottedline"/>
   <button className="button__shrunk"> 
     <img src={buttinIcon} alt=""></img>
-    <span>DiscoverAI</span>
+    <span>DISCOVER A.I.</span>
     </button>
 <h1 className="mainTitle"> Sophisticated <br/>skincare</h1>
 <img src={left} alt="dotted" className='dottedline2'/>
 <button className="takeTest" onClick={()=>naviagte("/testing")}>
   <img src={Button} alt=""/>
-  <span>Taketest</span>
+  <span>TAKE TEST</span>
 </button>
 
 

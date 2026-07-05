@@ -7,7 +7,7 @@ export default function Header() {
         <div className="nav__left"> 
     <h1>SKINSTRIC</h1> <span className="intro">[intro]</span>
     </div>
-    <button className="enter__code">Entercode</button>
+    <button className="enter__code">ENTER CODE</button>
 </header>
     </div>
   )
