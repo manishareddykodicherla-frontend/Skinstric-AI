@@ -13,7 +13,9 @@ export default function Homepage() {
       <main className="hero">
         <div className="sideDiamond sideDiamond--left" />
         <div className="sideDiamond sideDiamond--right" />
-
+<div className="rectangle">
+  <div className="rectangle__inner">
+    
         <button className="heroAction heroAction--left" type="button">
           <span className="heroAction__icon heroAction__icon--left" />
           <span>DISCOVER A.I.</span>
@@ -41,6 +43,9 @@ export default function Homepage() {
           <br />
           WHAT YOUR SKIN NEEDS.
         </p>
+        <button className="experience">EXPERIENCE</button>
+      </div>
+      </div>
       </main>
     </div>
   );

@@ -4,12 +4,10 @@
   color: #1a1b1c;
   overflow: hidden;
 }
-
 .hero {
   position: relative;
   min-height: calc(100vh - 58px);
 }
-
 .mainTitle {
   position: absolute;
   top: calc(50vh - 72px);
@@ -24,7 +22,6 @@
   line-height: 0.92;
   text-align: center;
 }
-
 .sideDiamond {
   position: absolute;
   top: calc(50vh - 182px);
@@ -33,15 +30,12 @@
   border: 1px dotted #a9a9a9;
   transform: rotate(45deg);
 }
-
 .sideDiamond--left {
   left: -105px;
 }
-
 .sideDiamond--right {
   right: -105px;
 }
-
 .heroAction {
   position: absolute;
   z-index: 3;
@@ -57,17 +51,17 @@
   line-height: 1;
   cursor: pointer;
 }
-
+.experience{
+  display:none;
+}
 .heroAction--left {
   top: calc(50vh - 80px);
   left: 20px;
 }
-
 .heroAction--right {
   top: calc(50vh - 80px);
   right: 20px;
 }
-
 .heroAction__icon {
   position: relative;
   width: 21px;
@@ -77,7 +71,6 @@
   background: #f8f8f8;
   flex: 0 0 21px;
 }
-
 .heroAction__icon::before {
   position: absolute;
   top: 50%;
@@ -88,15 +81,12 @@
   border-right: 1px solid #1a1b1c;
   content: "";
 }
-
 .heroAction__icon--left::before {
   transform: translate(-38%, -50%) rotate(180deg);
 }
-
 .heroAction__icon--right::before {
   transform: translate(-62%, -50%);
 }
-
 .description {
   position: absolute;
   left: 20px;
@@ -107,4 +97,69 @@
   font-weight: 500;
   line-height: 1.55;
   text-transform: uppercase;
+}
+
+@media(max-width:768px){
+  .sideDiamond{
+    display:none;
+  }
+  .heroAction__icon--left{
+    display:none;
+  }
+  .heroAction--left{
+    display:none;
+  }
+  .heroAction--right{
+    display:none;
+  }
+  .heroAction__icon--right{
+    display:none;
+  }
+  .description{
+    display:block;
+    bottom:220px;
+    left:80px;
+  }
+  .hero{
+    display:block;
+  }
+  .rectangle{
+    position:absolute;
+    display:block;
+    border: 1px solid black;
+    width:320px;
+    height:320px;
+    top:90px;
+    left:5px;
+    margin:20px;
+  }
+  .rectangle__inner{
+    border: 1px solid black;
+    width:290px;
+    height:290px;
+    position:absolute;
+    top:10px;
+    left:14px;
+  }
+  .experience{
+    display:block;
+    position:absolute;
+  top:260px;
+  left:80px; }
+  .mainTitle {
+    top: 30%;
+    width: 100%;
+    font-size: 48px;
+    line-height: 0.9;
+    z-index: 2;
+  }
+  .description {
+    left: 50%;
+    top: 190px;
+    bottom: auto;
+    transform: translateX(-50%);
+    width: 260px;
+    text-align: center;
+    z-index: 2;
+  }
 }
