@@ -254,7 +254,7 @@ export default function Result() {
         </div>
 </div>
         </div>
-        <button onClick={()=>navigate("/Select")} className="proceedbutton"> <img src={Button} alt="" classname="proceeding"/><span className="proceed">proceed</span></button>
+        <button onClick={()=>navigate("/Select")} className="proceedbutton"> <img src={Button} alt="" className="proceeding"/><span className="proceed">proceed</span></button>
     </div>
   )
 }

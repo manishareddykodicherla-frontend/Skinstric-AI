@@ -1,11 +1,9 @@
 .diamond {
-    position: absolute;
-    width:500px;
-    height: 500px;
-    border: 1px dashed #d8d8d8;
-    transform: rotate(45deg);
-
-  }
+  position: absolute;
+  border: 1px dashed #d8d8d8;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
   
   .diamond1 {
     width: 470px;
@@ -32,10 +30,11 @@ animation : rotateDiamond 18s linear infinite;
 
 .analysisContainer {
   position: relative;
-  width: 650px;
-  height: 650px;
-  margin: 40px auto 0;
+  width: min(650px, 82vw);
+  height: min(650px, 82vw);
+  margin: 10px auto 0;
 }
+
 .analysisContainer{
     position :relative;
     width:650px;
@@ -109,19 +108,21 @@ animation : rotateDiamond 18s linear infinite;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
+  width: min(560px, 86vw);
   text-align: center;
 }
-.nameInput {
-  width: min(520px, 80vw);
-  text-align: center;
+..nameInput {
+  width: 100%;
   border: none;
   border-bottom: 1px solid #999;
   outline: none;
   background: transparent;
-  font-size: 48px;
+  text-align: center;
+  font-size: clamp(34px, 5vw, 56px);
   color: #777;
   position: relative;
   z-index: 11;
+  pointer-events: auto;
 }
 
 

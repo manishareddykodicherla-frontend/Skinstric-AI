@@ -33,16 +33,43 @@ export default function Analysis() {
         
     };
 
-    const handleLocationEnter =async (e) => {
-        if (e.key === "Enter") {
-            if (!location.trim()) {
-                setError("Please enter your location");
-                return;
-            }
-            setError("");
-            setStep("loading");
-            setTimeout(() => setStep("done"), 1800);
-        }
+    const handleLocationEnter = async (e) => {
+  if (e.key !== "Enter") return;
+
+  if (!location.trim()) {
+    setError("Please enter your location");
+    return;
+  }
+
+  setError("");
+  setStep("loading");
+
+  const userData = {
+    name: name.trim(),
+    location: location.trim(),
+  };
+
+  try {
+    const response = await fetch(
+      "https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseOne",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userData),
+      }
+    );
+
+    const data = await response.json();
+    console.log(data);
+    localStorage.setItem("skinstricUser", JSON.stringify(userData));
+    setStep("done");
+    setTimeout(() => navigate("/Result"), 700);
+  } catch (error) {
+    console.error("Error submitting analysis:", error);
+    setError("Something went wrong. Please try again.");
+    setStep("location");
+  }
+};
     
 const userData={name :name,
     location :location,};
@@ -140,4 +167,4 @@ catch (error) {
             </div>
         </div>
     );
-}
+
