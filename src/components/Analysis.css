@@ -58,7 +58,16 @@ width:190px;
 }
 .analysisleft{
     margin:10px;
+    color: #1A1B1C;
+
 }
+.toStartAnalysis{
+    color:black;
+    font-size:16px;
+    font-weight:600;
+    font-style:semiBold;
+}
+
 .backButton{
     position:fixed;
     left:20px;

@@ -72,7 +72,7 @@ catch (error) {
         <div>
             <Header />
             <div className="analysisleft">
-                <p> Start Analysis</p>
+                <p className="toStartAnalysis"> To Start Analysis</p>
             </div>
             <div className="analysisContainer">
                 <div className="diamond diamond1"></div>
