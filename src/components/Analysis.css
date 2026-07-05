@@ -111,7 +111,7 @@ animation : rotateDiamond 18s linear infinite;
   width: min(560px, 86vw);
   text-align: center;
 }
-..nameInput {
+.nameInput {
   width: 100%;
   border: none;
   border-bottom: 1px solid #999;

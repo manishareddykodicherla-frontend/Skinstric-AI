@@ -1,43 +1,47 @@
-import React from 'react'
-import {useNavigate} from 'react-router-dom';
-import "./Homepage.css"
-import buttinIcon from "../assets/buttin-icon-shrunk.png";
-import right from "../assets/right.png"
-import Header from './Header';
-import left from "../assets/Rectangle 2778 (2).png"
-import Button from "../assets/button.png"
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./Homepage.css";
+import Header from "./Header";
 
 export default function Homepage() {
- 
-  const naviagte= useNavigate();
+  const navigate = useNavigate();
+
   return (
-    <div>
-        <Header/>
-<div className="rectangle">
-  <div className="homeDiamond"> 
-  <div className="homeDiamond__inner">
-  <img src={right} alt="dotted" className="dottedline"/>
-  <button className="button__shrunk"> 
-    <img src={buttinIcon} alt=""></img>
-    <span>DISCOVER A.I.</span>
-    </button>
-<h1 className="mainTitle"> Sophisticated <br/>skincare</h1>
-<img src={left} alt="dotted" className='dottedline2'/>
-<button className="takeTest" onClick={()=>naviagte("/testing")}>
-  <img src={Button} alt=""/>
-  <span>TAKETEST</span>
-</button>
+    <div className="homepage">
+      <Header />
 
+      <main className="hero">
+        <div className="sideDiamond sideDiamond--left" />
+        <div className="sideDiamond sideDiamond--right" />
 
-<h2 className="description">Skinstric developed an A.I. that creates a
-highly-personalized routine tailored to
-what your skin needs.
+        <button className="heroAction heroAction--left" type="button">
+          <span className="heroAction__icon heroAction__icon--left" />
+          <span>DISCOVER A.I.</span>
+        </button>
 
-</h2>
-<button  className="enterExperience" onClick={()=>naviagte("/testing")}>ENTER EXPERIENCE</button>
-</div>
+        <h1 className="mainTitle">
+          Sophisticated
+          <br />
+          skincare
+        </h1>
+
+        <button
+          className="heroAction heroAction--right"
+          type="button"
+          onClick={() => navigate("/testing")}
+        >
+          <span>TAKE TEST</span>
+          <span className="heroAction__icon heroAction__icon--right" />
+        </button>
+
+        <p className="description">
+          SKINSTRIC DEVELOPED AN A.I. THAT CREATES
+          <br />
+          A HIGHLY-PERSONALIZED ROUTINE TAILORED TO
+          <br />
+          WHAT YOUR SKIN NEEDS.
+        </p>
+      </main>
     </div>
-    </div>
-    </div>
-  )
+  );
 }

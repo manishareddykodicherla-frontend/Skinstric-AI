@@ -1,176 +1,110 @@
-.rectangle{
+.homepage {
+  min-height: 100vh;
+  background: #f8f8f8;
+  color: #1a1b1c;
+  overflow: hidden;
+}
+
+.hero {
   position: relative;
-  display: flex;
-justify-content: center;
-margin-top:40px;
+  min-height: calc(100vh - 58px);
 }
-.button__shrunk{
-  position:absolute;
-  display:flex;
-  gap:20px;
-  left:90px;
-  top:110px;
-  background: none;
-  border:none;
-  align-items: center;
-  
-}
-.dottedline{
-  position:absolute;
-  top:-150px;
-  left: -180px;
-  width:550px;
-  height:550px;
-}
-.dottedline2{
-  position: absolute;
-  right:-180px;
-  top:-150px;
- width:550px;
- height:550px;
-}
-.takeTest{
-  display: flex;
-  align-items: center;
-  gap:20px;
-  background:none;
-  border:none;
-  margin:20px;
-  position: absolute;
-  right:85px;
-  top:90px;
-  
-}
+
 .mainTitle {
   position: absolute;
-  top: 46%;
+  top: calc(50vh - 72px);
   left: 50%;
+  z-index: 2;
+  margin: 0;
   transform: translate(-50%, -50%);
-  font-size: clamp(62px, 7vw, 112px);
-  line-height: 0.95;
-  font-weight: 400;
-  text-align: center;
-  letter-spacing: -0.06em;
   color: #1a1b1c;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  font-size: clamp(60px, 6.65vw, 72px);
+  font-weight: 400;
+  letter-spacing: -0.075em;
+  line-height: 0.92;
+  text-align: center;
+}
+
+.sideDiamond {
+  position: absolute;
+  top: calc(50vh - 182px);
+  width: 220px;
+  height: 220px;
+  border: 1px dotted #a9a9a9;
+  transform: rotate(45deg);
+}
+
+.sideDiamond--left {
+  left: -105px;
+}
+
+.sideDiamond--right {
+  right: -105px;
+}
+
+.heroAction {
+  position: absolute;
   z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #1a1b1c;
+  font-size: 8px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
 }
 
-.button__shrunk:hover ~ .mainTitle {
-  transform: translate(-38%, -50%);
+.heroAction--left {
+  top: calc(50vh - 80px);
+  left: 20px;
 }
 
-.takeTest:hover ~ .mainTitle {
+.heroAction--right {
+  top: calc(50vh - 80px);
+  right: 20px;
+}
+
+.heroAction__icon {
+  position: relative;
+  width: 21px;
+  height: 21px;
+  border: 1px solid #1a1b1c;
+  transform: rotate(45deg);
+  background: #f8f8f8;
+  flex: 0 0 21px;
+}
+
+.heroAction__icon::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  border-top: 1px solid #1a1b1c;
+  border-right: 1px solid #1a1b1c;
+  content: "";
+}
+
+.heroAction__icon--left::before {
+  transform: translate(-38%, -50%) rotate(180deg);
+}
+
+.heroAction__icon--right::before {
   transform: translate(-62%, -50%);
 }
 
-.button__shrunk:hover ~ .takeTest,
-.takeTest:hover ~ .button__shrunk {
-  opacity: 0;
-  pointer-events: none;
+.description {
+  position: absolute;
+  left: 20px;
+  bottom: 22px;
+  margin: 0;
+  color: #1a1b1c;
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 1.55;
+  text-transform: uppercase;
 }
-
-.description{
-  position:absolute;
-  left:40px;
-  bottom:-400px;
-  width:280px;
-  font-size:14px;
-  font-weight:400;
-  line-height:1.5;
-}
-
-.enterExperience{
-  display:none;
-}
-.homeDiamondinner{
-  margin-top:40px;
-}
- @media (max-width:1024px){
-  .mainTitle{
-    font-size:60px;
-    top:45%;
-    left:50%;
-    transform:translate(-50% -50%);
-  }
-  .button__shrunk{
-    left:20px;
-    top:360px;
-  }
-  .takeTest{
-    right:30px;
-    top:360px;
-  }
-  .description{
-    bottom:100px;
-    width:260px;
-    font-size:14px;
-  }
-  .dottedline{
-    width:500px;
-left:-180px;
-top:120px;
-
-  }
-  .dottedline2{
-    width:500px;
-    right:-180px;
-    top:120px;
-  }
- }
- @media(max-width:768px){
-  .button__shrunk,
-  .takeTest,
-  .dottedline,
-  .dottedline2 {
-    display: none;
-  }
-
-  .mainTitle {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    font-size: clamp(48px, 13vw, 70px);
-    margin: 0 auto 22px;
-  }
-
-
- }
- @media (max-width:480px){
-  .rectangle{
-    margin-top:10px;
-  }
-  .mainTitle{
-    font-size:42px;
-    margin-bottom:8px;
-  }
-  .description{
-    width:240px;
-    font-size:14px;
-    margin-bottom:20px;
-  }
-  .homeDiamond{
-    width:170px;
-    height:170px;
-  }
-  .homeDiamond__inner{
-    width:140px;
-    height:140px;
-  }
-  .enterExperience{
-    display: block;
-  }
-  .homeDiamond {
-    width: 90vw;
-    height: 90vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .homeDiamond__inner {
-    width: 80vw;
-    height: 80vw;
-  }
-
- }

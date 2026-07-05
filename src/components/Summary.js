@@ -134,7 +134,7 @@ export default function Summary() {
                     </div>
                     <div className="infoCard activeCard1">
                         <p>Age</p>
-                        <h4>{ageGroup}</h4>
+                        <h4 className="ageGroup">{ageGroup}</h4>
                     </div>
                     <div className="infoCard activeCard1">
                         <p>Gender</p>

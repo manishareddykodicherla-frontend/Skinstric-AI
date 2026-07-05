@@ -1,14 +1,17 @@
-import React from 'react'
-import "./Header.css"
+import React from "react";
+import "./Header.css";
+
 export default function Header() {
   return (
-    <div>
-        <header>
-        <div className="nav__left"> 
-    <h1>SKINSTRIC</h1> <span className="intro">[intro]</span>
-    </div>
-    <button className="enter__code">ENTER CODE</button>
-</header>
-    </div>
-  )
+    <header className="siteHeader">
+      <div className="nav__left">
+        <h1>SKINSTRIC</h1>
+        <span className="intro">[ INTRO ]</span>
+      </div>
+
+      <button className="enter__code" type="button">
+        ENTER CODE
+      </button>
+    </header>
+  );
 }
