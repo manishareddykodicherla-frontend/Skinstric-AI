@@ -1,13 +1,9 @@
-import React, { useEffect}  from 'react';
-import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import Header from "./Header";
 import "./Select.css";
-import {useLocation} from "react-router-dom";
 export default function Select() {
 const navigate = useNavigate();
-const location = useLocation();
-const analysis =location.state?.analysis;
+
   return (
     <div>
         <Header/>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, waitFor, act } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Result from './Result';
 
 const mockNavigate = jest.fn();
@@ -12,12 +12,18 @@ jest.mock('./Header', () => () => <div data-testid="header" />);
 
 describe('Result image upload flow', () => {
   beforeEach(() => {
+    jest.useFakeTimers();
     jest.clearAllMocks();
     global.alert = jest.fn();
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
       json: async () => ({ success: true }),
     });
+  });
+
+  afterEach(() => {
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
   });
 
   it('uploads the selected image to the analysis API and navigates after confirmation', async () => {
@@ -36,12 +42,9 @@ describe('Result image upload flow', () => {
     global.FileReader = MockFileReader;
 
     const { container } = render(<Result />);
-    const input = container.querySelector('input[type="file"]');
-    const file = new File(['image'], 'photo.png', { type: 'image/png' });
+    const input = container.querySelector('input[type="file"]')
 
-    await act(async () => {
-      fireEvent.change(input, { target: { files: [file] } });
-    });
+    fireEvent.change(input, { target: { files: [file] } });
 
     await waitFor(() => expect(global.fetch).toHaveBeenCalled());
 
@@ -50,7 +53,9 @@ describe('Result image upload flow', () => {
     expect(options.method).toBe('POST');
     expect(options.body instanceof FormData).toBe(true);
 
-    await waitFor(() => expect(global.alert).toHaveBeenCalledWith('Analysis complete! Your image is ready.'));
+    jest.advanceTimersByTime(2000);
+
+    expect(global.alert).toHaveBeenCalledWith('Analysis complete! Your image is ready.');
     expect(mockNavigate).toHaveBeenCalledWith('/Select');
   });
 });

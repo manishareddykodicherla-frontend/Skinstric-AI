@@ -5,6 +5,7 @@ import buttinIcon from "../assets/buttin-icon-shrunk.png";
 import right from "../assets/right.png"
 import Header from './Header';
 import left from "../assets/Rectangle 2778 (2).png"
+import Button from "../assets/button.png"
 
 export default function Homepage() {
  
@@ -23,7 +24,7 @@ export default function Homepage() {
 <h1 className="mainTitle"> Sophisticated <br/>skincare</h1>
 <img src={left} alt="dotted" className='dottedline2'/>
 <button className="takeTest" onClick={()=>naviagte("/testing")}>
-  <img src={buttinIcon} alt=""/>
+  <img src={Button} alt=""/>
   <span>Taketest</span>
 </button>
 

@@ -4,7 +4,7 @@ import"./Result.css";
 import cameraIcon from "../assets/camera.png";
 import Ellipse2 from "../assets/gallery (1).png";
 import {useNavigate} from "react-router-dom";
-import Button from "../assets/buttin-icon-shrunk.png"
+import Button from "../assets/button.png"
 
 export default function Result() {
     const navigate= useNavigate();
@@ -229,7 +229,7 @@ export default function Result() {
                     )}
                     <img
                         src={Ellipse2}
-                        alt="Choose another photo"
+                        alt="Choose another option"
                         className="galleryUploadIcon"
                         onClick={openGalleryPicker}
                     />

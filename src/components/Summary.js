@@ -45,7 +45,7 @@ export default function Summary() {
     const race = analysisData?.data?.race || {};
     const age = analysisData?.data?.age || {};
     const gender = analysisData?.data?.gender || {};
-    const [raceName, raceScore] = getHighestValue(race);
+    const [raceName] = getHighestValue(race);
     const [ageGroup] = getHighestValue(age);
     const [genderName] = getHighestValue(gender);
 

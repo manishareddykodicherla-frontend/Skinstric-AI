@@ -3,7 +3,7 @@ import buttinIcon from "../assets/buttin-icon-shrunk.png";
 import "./Analysis.css";
 import Header from './Header';
 import { useNavigate } from 'react-router-dom';
-
+import Button from "../assets/button.png"
 export default function Analysis() {
     const navigate = useNavigate();
     const [step, setStep] = useState("name");
@@ -133,7 +133,7 @@ catch (error) {
             </button>
             {canProceed && (
                 <button className="proceedButton" onClick={() => navigate("/Result")}>
-                    <img src={buttinIcon} alt=""/>
+                    <img src={Button} alt=""/>
                     <span>Proceed</span>
                 </button>
             )}
