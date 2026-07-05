@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
 justify-content: center;
+margin-top:40px;
 }
 .button__shrunk{
   position:absolute;
@@ -12,19 +13,20 @@ justify-content: center;
   background: none;
   border:none;
   align-items: center;
+  
 }
 .dottedline{
   position:absolute;
   top:-150px;
-  left: -20px;
-  width:450px;
+  left: -180px;
+  width:550px;
   height:550px;
 }
 .dottedline2{
   position: absolute;
-  right:-20px;
+  right:-180px;
   top:-150px;
- width:450px;
+ width:550px;
  height:550px;
 }
 .takeTest{
@@ -81,6 +83,9 @@ justify-content: center;
 .enterExperience{
   display:none;
 }
+.homeDiamondinner{
+  margin-top:40px;
+}
  @media (max-width:1024px){
   .mainTitle{
     font-size:60px;
@@ -130,12 +135,8 @@ top:120px;
     margin: 0 auto 22px;
   }
 
-  .enterExperience {
-    display: inline-flex;
-  }
-}
 
- 
+ }
  @media (max-width:480px){
   .rectangle{
     margin-top:10px;

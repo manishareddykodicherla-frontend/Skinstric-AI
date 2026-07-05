@@ -2,8 +2,13 @@ header{
   display:flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom:20px;
+  margin-left:20px;
   position: relative;
+}
+.nav__left h1{
+  font-size:14px;
+  font-weight:600;
+  
 }
 .nav__left{
   display:flex;

@@ -25,7 +25,7 @@ export default function Homepage() {
 <img src={left} alt="dotted" className='dottedline2'/>
 <button className="takeTest" onClick={()=>naviagte("/testing")}>
   <img src={Button} alt=""/>
-  <span>TAKE TEST</span>
+  <span>Taketest</span>
 </button>
 
 
