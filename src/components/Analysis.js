@@ -71,28 +71,6 @@ export default function Analysis() {
   }
 };
     
-const userData={name :name,
-    location :location,};
-    console.log(userData)
-try{
-    const response= await fetch("https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseOne",{
-    method:"POST",
-    headers:{"Content-Type": "application/json",      
-    },
-    body:JSON.stringify({
-        name:name.trim(),
-        location:location.trim(),
-    }),
-})
-const data = await response.json();
-console.log(data);
-localStorage.setItem("skinstricUser",JSON.stringify(userData))
-navigate("/testing");
-}
-catch (error) {
-    console.error("Error submitting analysis:", error);
-}
-    };
     const canProceed = name.trim() !== "" && location.trim() !== "";
 
     return (
@@ -168,3 +146,4 @@ catch (error) {
         </div>
     );
 
+}
