@@ -148,7 +148,7 @@ animation : rotateDiamond 18s linear infinite;
     height: 500px;
     border: 1px dashed #d8d8d8;
     transform: rotate(45deg);
-    margin-left:280px;
+    margin-left:80px;
     margin-top:50px;
     align-items: center;
 
@@ -175,7 +175,7 @@ animation : rotateDiamond 18s linear infinite;
 @media (max-width:768px){
     .content{
         top:200px;
-        left:160px;
+        left:200px;
     }
     .diamond{
         margin-left:50px;
@@ -192,6 +192,9 @@ animation : rotateDiamond 18s linear infinite;
     }
     .proceedButton{
         top:450px;
+    }
+    .diamomd{
+        margin-left:20px;
     }
     .diamond1{
         width:420px;
@@ -213,14 +216,14 @@ animation : rotateDiamond 18s linear infinite;
     .diamond{
         width:250px;
         height:250px;
-        margin-left:100px;
-        margin-top:150px;
+        margin-left:20px;
+        margin-top:110px;
             border: 1px dashed #d8d8d8;
 
     }
     .content{
         top:180px;
-        left:90px;
+        left:180px;
     }
     .backButton{
         top:400px;

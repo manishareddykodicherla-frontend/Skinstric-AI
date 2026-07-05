@@ -43,7 +43,7 @@ export default function Homepage() {
           <br />
           WHAT YOUR SKIN NEEDS.
         </p>
-        <button className="experience">EXPERIENCE</button>
+        <button className="experience" onClick={()=>navigate("/testing")}>EXPERIENCE</button>
       </div>
       </div>
       </main>
