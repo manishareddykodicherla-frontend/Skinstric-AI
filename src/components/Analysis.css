@@ -36,7 +36,7 @@ animation : rotateDiamond 18s linear infinite;
     margin: 10px auto 0;
 }
 .nameInput{
-     width: 420px;
+     width: 350px;
   border: none;
   border-bottom: 1px solid #999;
   outline: none;
@@ -99,9 +99,9 @@ animation : rotateDiamond 18s linear infinite;
         position: absolute;
     top: 40%;
         left: 40%;
-        transform: translate(-50%, -50%);
+        transform: translate(-40%, -40%);
         z-index: 10;
-        width: min(560px, 86vw);
+        width: min(450px, 96vw);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -176,6 +176,9 @@ animation : rotateDiamond 18s linear infinite;
                 width: min(420px, 82vw);
                 gap: 12px;
     }
+    .contentpara{
+        transform:translateX(-20%);
+    }
     .diamond{
                 margin-left:0;
     }
@@ -219,7 +222,7 @@ animation : rotateDiamond 18s linear infinite;
         width: min(320px, 92vw);
         height: min(320px, 92vw);
         min-height: 320px;
-        margin: 20px auto 0;
+        margin-left: 40px;
         padding-top:0;
     }
     .diamond{
@@ -229,7 +232,7 @@ animation : rotateDiamond 18s linear infinite;
         margin-top:20px;
     }
     .content{
-        top:45%;
+        top:37%;
         left:45%;
         width: min(250px, 78vw);
         gap: 10px;
@@ -254,14 +257,14 @@ animation : rotateDiamond 18s linear infinite;
 
     }
     .contentpara{
-        position:static;
-        text-align: center;
-        margin:0;
         
+        text-align: center;
+        transform:translateX(-44%);
+        font-size:14px;
     }
     .nameInput{
-        position: static;
-        width:min(250px, 78vw);
+        transform:translateX(-13%);
+        width:min(250px, 58vw);
         font-size:24px;
     }
     .buttons{
