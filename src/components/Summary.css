@@ -197,7 +197,7 @@
     text-align: left;
     cursor: pointer;
     width: 100%;
-    max-width: 150px;
+    max-width: 180px;
     padding: 16px 14px;
     box-sizing: border-box;
 }
@@ -369,7 +369,7 @@
     .activeCard1{
         width: 100%;
         height: auto;
-        min-height: 80px;
+        box-sizing:border-box;
     }
     .summaryCenter{
         padding: 20px 14px;

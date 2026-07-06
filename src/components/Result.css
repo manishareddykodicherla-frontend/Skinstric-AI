@@ -374,7 +374,7 @@ animation : cameraRotate 18s  infinite;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 36px;
+    gap: 150px;
     padding-top: 20px;
     
   }
@@ -511,6 +511,10 @@ animation : cameraRotate 18s  infinite;
   }
 }
 @media (max-width:480px){
+  .uploadPreviewBox{
+    top:5px;
+    right:5px;
+  }
   .resultsContainer{
     gap:16px;
   }
