@@ -99,7 +99,7 @@ animation : rotateDiamond 18s linear infinite;
         position: absolute;
     top: 40%;
         left: 40%;
-        transform: translate(-40%, -40%);
+        transform: translate(-50%, -80%);
         z-index: 10;
         width: min(450px, 96vw);
         display: flex;
@@ -111,8 +111,7 @@ animation : rotateDiamond 18s linear infinite;
     margin-top:0;
 }
 .contentpara{
-                position:static;
-                margin:0;
+transform:translateX(-30%);
 }
 .nameInput {
   width: 100%;
@@ -232,8 +231,8 @@ animation : rotateDiamond 18s linear infinite;
         margin-top:20px;
     }
     .content{
-        top:37%;
-        left:45%;
+        top:50%;
+        left:50%;
         width: min(250px, 78vw);
         gap: 10px;
     }
