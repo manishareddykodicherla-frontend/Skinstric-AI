@@ -22,7 +22,10 @@ header{
 }
 .resultsContainer{
   display:flex;
-  justify-content:space-around;
+  justify-content:center;
+  align-items:center;
+  gap:clamp(24px, 8vw, 120px);
+  flex-wrap:wrap;
   position:relative;
 }
 
@@ -56,17 +59,21 @@ header{
   padding:12px;
 }
 .reslutsCamera{
-    position: relative;
-width:50%;
-height:50%;
+  position: relative;
+  width: min(460px, 44vw);
+  height: min(460px, 44vw);
+  display:flex;
+  justify-content:center;
+  align-items:center;
   }
   
   .cameraDiamond1 {
     position:absolute;
     width: 420px;
     height:420px;
-    top:20px;
-    left:20px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%) rotate(45deg);
     animation :cameraRotate 30s linear infinite;
     border: 1px dashed #d8d8d8;
   }
@@ -74,16 +81,22 @@ height:50%;
   .camera{
     animation :none;
     position :absolute;
-    top:80px;
-    left:140px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:8;
   }
 
   .cameraDiamond2{
     position:absolute;
     width:380px;
     height:380px;
-    top:35px;
-    left:35px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%) rotate(45deg);
     animation :cameraRotate 24s linear infinite;
     border: 1px dashed #d8d8d8;
   }
@@ -92,26 +105,28 @@ height:50%;
     position:absolute;
     width:350px;
     height:350px;
-    top:50px;
-    left:50px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%) rotate(45deg);
     border: 1px dashed #d8d8d8;
     box-sizing: border-box;
     animation : cameraRotate 18s linear infinite;
   }
 .resultsGallery{
-      position: relative;
-      width:50%;
-      height:50%;
-      display:flex;
-      justify-content:center;
-      align-items:center;
+  position: relative;
+  width: min(460px, 44vw);
+  height: min(460px, 44vw);
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 .galleryDiamond1 {
     position:absolute;
     width: 420px;
     height:420px;
-    top:20px;
-    left:20px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%) rotate(45deg);
     animation :cameraRotate 30s  infinite;
     border: 1px dashed #d8d8d8;
 
@@ -148,7 +163,8 @@ height:50%;
 
   .galleryUploadIcon {
     width: 150px;
-    height: 84px;
+    height: 150px;
+    object-fit: contain;
     cursor: pointer;
     z-index: 7;
   }
@@ -270,6 +286,9 @@ height:50%;
 }
 
 .cameraIcon {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
   cursor: pointer;
 }
 
@@ -299,15 +318,16 @@ height:50%;
   box-shadow: 0 0 0 6px rgba(255,255,255,0.95);
   cursor:pointer;
   pointer-events:auto;
-  top:140px;
-  right:80px;
+  top:auto;
+  right:auto;
 }
 .galleryDiamond2{
   position:absolute;
     width:380px;
     height:380px;
-    top:35px;
-    left:35px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%) rotate(45deg);
 animation :cameraRotate 24s  infinite;
     border: 1px dashed #d8d8d8;
 
@@ -316,10 +336,10 @@ animation :cameraRotate 24s  infinite;
   position:absolute;
     width:350px;
     height:350px;
-    top:50px;    
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%) rotate(45deg);
     border: 1px dashed #d8d8d8;
-
-    left:50px;
     box-sizing: border-box;
 animation : cameraRotate 18s  infinite;
 }
@@ -338,10 +358,10 @@ animation : cameraRotate 18s  infinite;
 }
 @keyframes cameraRotate{
     from{
-        transform:rotate(45deg);
+    transform:translate(-50%, -50%) rotate(45deg);
     }
     to{
-        transform:rotate(405deg)
+    transform:translate(-50%, -50%) rotate(405deg)
     }
 }
 
@@ -354,74 +374,62 @@ animation : cameraRotate 18s  infinite;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 36px;
     padding-top: 20px;
     
   }
 
   .reslutsCamera {
-    width: 100%;
-    min-height: 550px;
+    width: min(420px, 86vw);
+    height: min(420px, 86vw);
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px;
+    margin: 0;
+  }
+
+  .resultsGallery {
+    width: min(420px, 86vw);
+    height: min(420px, 86vw);
   }
 
   .cameraDiamond1{
-    width:450px;
-    height:450px;
-    margin-left:200px;
+    width:380px;
+    height:380px;
   }
   .galleryDiamond1 {
-    width: 450px;
-    height: 450px;
+    width: 380px;
+    height: 380px;
   
   }
 
   .cameraDiamond2{
-    width:420px;
-    height:420px;
+    width:340px;
+    height:340px;
   }
-  
-  .cameraIcon{
-    position: absolute;
-    left:-80px;
-    top:1px;
-    width:150px;
-    height:150px;
-  }
+
   .galleryDiamond2 {
-    width: 420px;
-    height: 420px;
+    width: 340px;
+    height: 340px;
     
   }
 
   .cameraDiamond3{
-    width:380px;
-    height:380px;
+    width:300px;
+    height:300px;
   }
   .galleryDiamond3 {
-    width: 380px;
-    height: 380px;
+    width: 300px;
+    height: 300px;
 
   }
 
-  .camera {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 96px;
-    height: 96px;
-  }
-
-  .gallery {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .cameraIcon,
+  .ellipse2,
+  .galleryUploadIcon {
+    width: 132px;
+    height: 132px;
   }
 
   .uploadPreviewBox {
@@ -453,59 +461,40 @@ animation : cameraRotate 18s  infinite;
 
 @media (max-width: 768px) {
   .resultsContainer {
-    gap: 16px;
+    gap: 20px;
     
   }
 
   .reslutsCamera,
   .resultsGallery {
-    min-height: 420px;
+    width: min(320px, 86vw);
+    height: min(320px, 86vw);
+    min-height: unset;
   }
 
   .cameraDiamond1,
   .galleryDiamond1 {
-    width: 220px;
-    height: 220px;
+    width: 280px;
+    height: 280px;
   }
 
   .cameraDiamond2,
   .galleryDiamond2 {
-    width: 180px;
-    height: 180px;
+    width: 240px;
+    height: 240px;
   }
 
   .cameraDiamond3,
   .galleryDiamond3 {
-    width: 140px;
-    height: 140px;
+    width: 200px;
+    height: 200px;
   }
 
-  .camera {
-    width: 80px;
-    height: 80px;
-  }
-  .cameraIcon{
-    width:100px;
-    height:100px;
-    top:10px;
-    left:-40px;
-    position:absolute;
-  }
-
-  .gallery {
-    top: 50%;
-  }
-
-  .ellipse1 {
+  .cameraIcon,
+  .ellipse2,
+  .galleryUploadIcon {
     width: 100px;
     height: 100px;
-  }
-
-  .ellipse2 {
-    width: 100px;
-    height: 100px;
-    top:50px;
-    left:50px;
   }
 
   .uploadPreviewBox {
@@ -523,28 +512,43 @@ animation : cameraRotate 18s  infinite;
 }
 @media (max-width:480px){
   .resultsContainer{
-    gap:5px;
+    gap:16px;
   }
   .reslutsCamera{
-    margin-left:20px;
-    transform: translateX(50px);
-    top:-80px;
-  }
-  .cameraDiamond1{
-    margin:20px;
-  }
-  .cameraIcon{
-    position:absolute;
-    top:-10px;
-    
-  }
-  .gallery{
-width:320px;
-height:320px;
+    width: min(260px, 86vw);
+    height: min(260px, 86vw);
+    margin: 0 auto;
   }
   .resultsGallery{
-    top:-230px;
+    width: min(260px, 86vw);
+    height: min(260px, 86vw);
   }
+
+  .cameraDiamond1,
+  .galleryDiamond1 {
+    width: 230px;
+    height: 230px;
+  }
+
+  .cameraDiamond2,
+  .galleryDiamond2 {
+    width: 196px;
+    height: 196px;
+  }
+
+  .cameraDiamond3,
+  .galleryDiamond3 {
+    width: 162px;
+    height: 162px;
+  }
+
+  .cameraIcon,
+  .ellipse2,
+  .galleryUploadIcon {
+    width: 86px;
+    height: 86px;
+  }
+
   .proceedbutton{
     position: fixed;
     right: 12px;
@@ -556,13 +560,6 @@ height:320px;
   .proceed{
     display: inline;
     font-size: 16px;
-  }
-  .ellipse2{
-    position:absolute;
-    top:50px;
-    left:150px;
-    width:100px;
-    height:100px;
   }
 
 }

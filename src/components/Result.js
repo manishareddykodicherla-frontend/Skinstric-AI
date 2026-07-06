@@ -5,7 +5,6 @@ import cameraIcon from "../assets/camera.png";
 import Ellipse2 from "../assets/gallery (1).png";
 import {useNavigate} from "react-router-dom";
 import Button from "../assets/button.png"
-
 export default function Result() {
     const navigate= useNavigate();
     const fileInputRef=useRef(null);
