@@ -4,6 +4,9 @@ import "./Summary.css";
 import buttonIcon from"../assets/buttin-icon-shrunk.png";
 import Button from "../assets/button.png";
 import { useLocation, useNavigate } from 'react-router-dom';
+
+const SUMMARY_SELECTION_KEY = 'skinstricSummarySelection';
+
 export default function Summary() {
         const navigate=useNavigate();
         const location = useLocation();
@@ -75,13 +78,56 @@ export default function Summary() {
 
     useEffect(() => {
         if (analysisData?.data) {
+            const savedSelection = (() => {
+                try {
+                    const stored = localStorage.getItem(SUMMARY_SELECTION_KEY);
+                    return stored ? JSON.parse(stored) : null;
+                } catch (error) {
+                    console.error('Failed to parse stored summary selection:', error);
+                    return null;
+                }
+            })();
+
             const race = analysisData?.data?.race || {};
+            const age = analysisData?.data?.age || {};
+            const gender = analysisData?.data?.gender || {};
+            const valuesByCategory = {
+                race,
+                age,
+                gender,
+            };
+
+            if (savedSelection?.category && valuesByCategory[savedSelection.category]) {
+                const savedValues = valuesByCategory[savedSelection.category];
+                const savedScore = savedValues?.[savedSelection.label];
+
+                if (typeof savedScore === 'number') {
+                    setSelectedCategory(savedSelection.category);
+                    setSelectedLabel(savedSelection.label);
+                    setSelectedScore(savedScore);
+                    return;
+                }
+            }
+
             const [name, score] = getHighestValue(race);
             setSelectedCategory('race');
             setSelectedLabel(name);
             setSelectedScore(score);
         }
     }, [analysisData]);
+
+    useEffect(() => {
+        if (!selectedLabel) return;
+
+        localStorage.setItem(
+            SUMMARY_SELECTION_KEY,
+            JSON.stringify({
+                category: selectedCategory,
+                label: selectedLabel,
+                score: selectedScore,
+            })
+        );
+    }, [selectedCategory, selectedLabel, selectedScore]);
 
     if (isLoading) {
         return <h2>Loading...</h2>;

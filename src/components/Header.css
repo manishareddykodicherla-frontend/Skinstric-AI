@@ -6,11 +6,12 @@
   justify-content: space-between;
   height: 58px;
   padding: 0 18px 0 20px;
-  background: #f8f8f8;
+  
 }
 
 .nav__left {
   display: flex;
+  justify-content:space-between;
   align-items: center;
   gap: 16px;
 }

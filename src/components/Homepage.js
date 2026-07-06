@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Homepage.css";
 import Header from "./Header";
-
+import buttin from "../assets/buttin-icon-shrunk.png";
+import Button from "../assets/button.png";
 export default function Homepage() {
   const navigate = useNavigate();
   const [hoveredAction, setHoveredAction] = useState(null);
@@ -14,8 +15,8 @@ export default function Homepage() {
       <main className={`hero ${hoveredAction ? `hero--hover-${hoveredAction}` : ""}`}>
         <div className="sideDiamond sideDiamond--left" />
         <div className="sideDiamond sideDiamond--right" />
-<div className="rectangle">
-  <div className="rectangle__inner">
+<div className="homediamond">
+  <div className="homediamond1">
     
         <button
           className="heroAction heroAction--left"
@@ -23,7 +24,7 @@ export default function Homepage() {
           onMouseEnter={() => setHoveredAction("left")}
           onMouseLeave={() => setHoveredAction(null)}
         >
-          <span className="heroAction__icon heroAction__icon--left" />
+          <img src={buttin} alt="" className=" heroAction__icon--left" />
           <span>DISCOVER A.I.</span>
         </button>
 
@@ -40,8 +41,9 @@ export default function Homepage() {
           onMouseLeave={() => setHoveredAction(null)}
           onClick={() => navigate("/testing")}
         >
+                    <img src={Button} alt="" className=" heroAction__icon--right" />
+
           <span>TAKE TEST</span>
-          <span className="heroAction__icon heroAction__icon--right" />
         </button>
 
         <p className="description">
