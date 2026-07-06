@@ -192,6 +192,12 @@
     color:#0059ff;
 }
 
+.infoCard{
+    border: none;
+    text-align: left;
+    cursor: pointer;
+}
+
 .activeCard{
     padding:20px;
     width:60px;
@@ -207,7 +213,7 @@
     
     margin: 0;
 }
-.activeCard1{
+.inactiveCard{
     width:60px;
     height:60px;
     background-color: #e1dfdfcc;
@@ -217,6 +223,18 @@
 color:black;
 padding:20px;
 
+}
+.activeCard p,
+.activeCard h4,
+.inactiveCard p,
+.inactiveCard h4{
+    margin: 0;
+}
+.activeCard,
+.inactiveCard{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
 }
 .predictionHeading{
     display:flex;

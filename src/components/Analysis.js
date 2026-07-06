@@ -124,10 +124,7 @@ export default function Analysis() {
                             <p className="loadingDots">{dots}</p>
                         </>
                     ) : (
-                        <>
-
-                            <p className="thankYouText">Proceed for the next step</p>
-                        </>
+                        <p className="thankYouText">Proceed for the next step</p>
                     )}
                 </div>
             </div>

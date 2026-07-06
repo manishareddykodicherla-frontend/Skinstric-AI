@@ -17,8 +17,9 @@ export default function Summary() {
             return null;
         }
     });
-    const [selectedRace, setSelectedRace] = useState('');
-    const [selectedRaceScore, setSelectedRaceScore] = useState(0);
+    const [selectedCategory, setSelectedCategory] = useState('race');
+    const [selectedLabel, setSelectedLabel] = useState('');
+    const [selectedScore, setSelectedScore] = useState(0);
     const [isLoading, setIsLoading] = useState(!analysisData);
 
     const getHighestValue = (obj) => {
@@ -29,6 +30,27 @@ export default function Summary() {
         return entries.reduce((highest, current) =>
             current[1] > highest[1] ? current : highest
         );
+    };
+
+    const formatCategoryTitle = (category) => {
+        if (category === 'age') return 'AGE';
+        if (category === 'gender') return 'SEX';
+        return 'RACE';
+    };
+
+    const formatCenterLabel = (category, label) => {
+        if (!label) return '';
+        if (category === 'age') {
+            return `${label} y.o.`;
+        }
+        return label;
+    };
+
+    const selectCategory = (category, values) => {
+        const [name, score] = getHighestValue(values || {});
+        setSelectedCategory(category);
+        setSelectedLabel(name);
+        setSelectedScore(score);
     };
 
     useEffect(() => {
@@ -55,8 +77,9 @@ export default function Summary() {
         if (analysisData?.data) {
             const race = analysisData?.data?.race || {};
             const [name, score] = getHighestValue(race);
-            setSelectedRace(name);
-            setSelectedRaceScore(score);
+            setSelectedCategory('race');
+            setSelectedLabel(name);
+            setSelectedScore(score);
         }
     }, [analysisData]);
 
@@ -92,13 +115,13 @@ export default function Summary() {
     const [raceName] = getHighestValue(race);
     const [ageGroup] = getHighestValue(age);
     const [genderName] = getHighestValue(gender);
+    const selectedValues = selectedCategory === 'age'
+        ? age
+        : selectedCategory === 'gender'
+        ? gender
+        : race;
 
-
-
-
-
-
-    const renderBreakdown = (title, values, selectedName, onSelect) => (
+    const renderBreakdown = (values, selectedName, onSelect) => (
     
         <div className="dataGroup">
             
@@ -128,34 +151,46 @@ export default function Summary() {
             </div>
             <div className="summaryContent">
                 <div className="summaryLeft">
-                    <div className="infoCard activeCard">
+                    <button
+                        type="button"
+                        className={`infoCard ${selectedCategory === 'race' ? 'activeCard' : 'inactiveCard'}`}
+                        onClick={() => selectCategory('race', race)}
+                    >
                         <p className="race">Race</p>
                         <h4 className="raceName">{raceName}</h4>
-                    </div>
-                    <div className="infoCard activeCard1">
+                    </button>
+                    <button
+                        type="button"
+                        className={`infoCard ${selectedCategory === 'age' ? 'activeCard' : 'inactiveCard'}`}
+                        onClick={() => selectCategory('age', age)}
+                    >
                         <p>Age</p>
                         <h4 className="ageGroup">{ageGroup}</h4>
-                    </div>
-                    <div className="infoCard activeCard1">
+                    </button>
+                    <button
+                        type="button"
+                        className={`infoCard ${selectedCategory === 'gender' ? 'activeCard' : 'inactiveCard'}`}
+                        onClick={() => selectCategory('gender', gender)}
+                    >
                         <p>Gender</p>
                         <h4>{genderName}</h4>
-                    </div>
+                    </button>
                 </div>
 
                 <div className="summaryCenter">
                     <div className="centerContent">
                         <div className="centerDiamondWrapper">
                             
-                            <div className="center">{selectedRace}</div>
+                            <div className="center">{formatCenterLabel(selectedCategory, selectedLabel)}</div>
                         </div>
                         <div
                             className="confidenceCircle"
                             style={{
-                                '--percent': `${Math.round(selectedRaceScore * 100)}%`,
-                                '--progress': `${Math.round(selectedRaceScore * 360)}deg`
+                                '--percent': `${Math.round(selectedScore * 100)}%`,
+                                '--progress': `${Math.round(selectedScore * 360)}deg`
                             }}
                         >
-                            <h2>{Math.round(selectedRaceScore * 100)}%</h2>
+                            <h2>{Math.round(selectedScore * 100)}%</h2>
                         </div>
                     </div>
                 </div>
@@ -163,12 +198,12 @@ export default function Summary() {
                 <div className="summaryRight">
                     <div className="rightPanel">
                         <div className="predictionHeading">
-                            <h4>RACE</h4>
+                            <h4>{formatCategoryTitle(selectedCategory)}</h4>
                             <h4>A.I.CONFIDENCE</h4>
                         </div>
-                        {renderBreakdown('Race', race, selectedRace, (name, score) => {
-                            setSelectedRace(name);
-                            setSelectedRaceScore(score);
+                        {renderBreakdown(selectedValues, selectedLabel, (name, score) => {
+                            setSelectedLabel(name);
+                            setSelectedScore(score);
                         })}
                 
             
