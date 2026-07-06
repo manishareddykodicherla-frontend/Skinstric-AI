@@ -77,6 +77,9 @@ animation : rotateDiamond 18s linear infinite;
     white-space:nowrap;
     overflow:visible;
 }
+.locationInput::placeholder{
+    font-size: clamp(18px, 2.6vw, 28px);
+}
 .buttons{
     display:flex;
     justify-content:space-around;
@@ -237,9 +240,9 @@ transform:translateX(-30%);
         gap: 10px;
     }
     
-    .diomaond1{
+    .diamond1{
         width:220px;
-        height:20px;
+        height:220px;
             border: 1px dashed #d8d8d8;
 
     }

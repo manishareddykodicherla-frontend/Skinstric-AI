@@ -110,8 +110,8 @@ export default function Analysis() {
                         <>
                             <p className="nameDisplay">Hello, {name}</p>
                             <input
-                                className="nameInput"
-                                placeholder="Where are you from?"
+                                className="nameInput locationInput"
+                                placeholder="Enter location"
                                 value={location}
                                 onChange={(e) => setLocation(e.target.value)}
                                 onKeyDown={handleLocationEnter}
