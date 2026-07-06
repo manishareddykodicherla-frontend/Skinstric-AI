@@ -104,18 +104,38 @@ animation : rotateDiamond 18s linear infinite;
 }
 .content {
   position: absolute;
-  top: 20%;
+    top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
   width: min(560px, 86vw);
   text-align: center;
-  margin-top:100px;
+    margin-top:0;
+}
+.analysisRect {
+    width: min(520px, 86vw);
+    min-height: 240px;
+    border: 1px solid #1a1b1c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.analysisRectInner {
+    width: calc(100% - 28px);
+    min-height: 210px;
+    border: 1px solid #1a1b1c;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 .contentpara{
-    position:absolute;
-    left:90px;
-    top:-50px;
+        position:static;
+        margin:0 0 20px;
 }
 .nameInput {
   width: 100%;
@@ -161,10 +181,21 @@ animation : rotateDiamond 18s linear infinite;
   }
   .content {
   position: absolute;
-  top: 40%;
-  left: 60%;
+    top: 50%;
+    left: 50%;
   transform: translate(-50%, -50%);
 }
+.contentpara{
+    top:-20px;
+    right:5px;
+}
+    .analysisRect {
+        width: min(500px, 90vw);
+        min-height: 220px;
+    }
+    .analysisRectInner {
+        min-height: 190px;
+    }
   .backButton{
     top:80px;
   }
@@ -176,19 +207,39 @@ animation : rotateDiamond 18s linear infinite;
     font-size:20px;
     font-weight:200;
   }
+  .nameInput{
+    width: min(500px, 90vw);
+  }
+  .backButton,.proceedButton{
+    bottom:80px;
+  }
+  .contentpara{
+    position:absolute;
+    text-align:center;
+    left:80px;
+  }
 }
 @media (max-width:768px){
     .content{
-        top:180px;
-        left:60px;
+        top:40%;
+        left:40%;
     }
-    .contentpara{
-        left:190px;
+    .analysisRect {
+        width: min(420px, 88vw);
+        min-height: 190px;
+    }
+    .analysisRectInner {
+        width: calc(100% - 20px);
+        min-height: 165px;
+        padding: 16px;
     }
     .diamond{
         margin-left:50px;
         border: 1px dashed #d8d8d8;
 
+    }
+    .contentpara{
+        left:240px;
     }
     .nameInput{
         width:min(380px, 80vw);
@@ -219,8 +270,17 @@ animation : rotateDiamond 18s linear infinite;
     .analysisContainer{
         margin-top:10px;
     }
+    .nameDisplay{
+        font-size:8px;
+        text-align:center;
+        left:-10px;
+    }
 }
 @media (max-width:480px){
+    .analysisContainer{
+        margin-top:10px;
+        padding-top:20px;
+    }
     .diamond{
         width:250px;
         height:250px;
@@ -230,11 +290,16 @@ animation : rotateDiamond 18s linear infinite;
 
     }
     .content{
-        top:80px;
-        left:180px;
+        top:50%;
+        left:50%;
     }
-    .backButton{
-        top:400px;
+    .analysisRect {
+        width: min(310px, 90vw);
+        min-height: 160px;
+    }
+    .analysisRectInner {
+        min-height: 140px;
+        padding: 12px;
     }
     
     .diomaond1{
@@ -256,10 +321,9 @@ animation : rotateDiamond 18s linear infinite;
 
     }
     .contentpara{
-        position:absolute;
+        position:static;
         text-align: center;
-        top:20px;
-        left:80px;
+        margin:0 0 12px;
         
     }
     .nameInput{
@@ -271,7 +335,21 @@ animation : rotateDiamond 18s linear infinite;
         width:min(250px, 78vw);
         font-size:24px;
     }
-    .proceedButton{
-        top:400px;
+    .buttons{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    
     }
+    .backButton,
+    .proceedButton{
+        position:static;
+        top:auto;
+        bottom:auto;
+        left:auto;
+        right:auto;
+        font-size:12px;
+        gap:8px;
+    }
+
 }

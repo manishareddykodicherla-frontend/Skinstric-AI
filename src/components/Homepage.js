@@ -1,22 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Homepage.css";
 import Header from "./Header";
 
 export default function Homepage() {
   const navigate = useNavigate();
+  const [hoveredAction, setHoveredAction] = useState(null);
 
   return (
     <div className="homepage">
       <Header />
 
-      <main className="hero">
+      <main className={`hero ${hoveredAction ? `hero--hover-${hoveredAction}` : ""}`}>
         <div className="sideDiamond sideDiamond--left" />
         <div className="sideDiamond sideDiamond--right" />
 <div className="rectangle">
   <div className="rectangle__inner">
     
-        <button className="heroAction heroAction--left" type="button">
+        <button
+          className="heroAction heroAction--left"
+          type="button"
+          onMouseEnter={() => setHoveredAction("left")}
+          onMouseLeave={() => setHoveredAction(null)}
+        >
           <span className="heroAction__icon heroAction__icon--left" />
           <span>DISCOVER A.I.</span>
         </button>
@@ -30,6 +36,8 @@ export default function Homepage() {
         <button
           className="heroAction heroAction--right"
           type="button"
+          onMouseEnter={() => setHoveredAction("right")}
+          onMouseLeave={() => setHoveredAction(null)}
           onClick={() => navigate("/testing")}
         >
           <span>TAKE TEST</span>

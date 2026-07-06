@@ -89,7 +89,7 @@ export default function Analysis() {
                         {step === "name"
                             ? "CLICK TO TYPE"
                             : step === "location"
-                            ? "ENTER LOCATION"
+                            ? ""
                             : step === "loading"
                             ? "PROCESSING SUBMISSION"
                             : "THANK YOU"}
