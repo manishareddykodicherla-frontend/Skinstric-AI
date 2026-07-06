@@ -8,39 +8,37 @@
   .diamond1 {
     width: 470px;
     height:470px;
-    top:20px;
-    left:20px;
+    top:50%;
+    left:50%;
+    margin-top:-235px;
+    margin-left:-235px;
     animation :rotateDiamond 30s linear infinite;
   }
 .diamond2{
     width:440px;
     height:440px;
-    top:35px;
-    left:35px;
+    top:50%;
+    left:50%;
+    margin-top:-220px;
+    margin-left:-220px;
 animation :rotateDiamond 24s linear infinite;
 }
 .diamond3{
     width:420px;
     height:420px;
-    top:50px;
-    left:50px;
+    top:50%;
+    left:50%;
+    margin-top:-210px;
+    margin-left:-210px;
     box-sizing: border-box;
 animation : rotateDiamond 18s linear infinite;
 }
 
 .analysisContainer {
-  position: relative;
-  width: min(650px, 82vw);
-  height: min(650px, 82vw);
-  margin: 10px auto 0;
-}
-
-.analysisContainer{
-    position :relative;
-    width:650px;
-    height:100vh;
-    margin-top:10px;
-    margin-left:350px;
+    position: relative;
+    width: 650px;
+    height: 650px;
+    margin: 10px auto 0;
 }
 .nameInput{
      width: 420px;

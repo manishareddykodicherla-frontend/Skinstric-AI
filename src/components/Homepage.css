@@ -1,6 +1,6 @@
 .homepage {
   min-height: 100vh;
-  background: #f8f8f8;
+  background: #f2f2f2;
   color: #1a1b1c;
   overflow: hidden;
 }
@@ -10,47 +10,48 @@
 }
 .mainTitle {
   position: absolute;
-  top: calc(50vh - 72px);
+  top: 50%;
   left: 50%;
   z-index: 2;
   margin: 0;
   transform: translate(-50%, -50%);
   color: #1a1b1c;
-  font-size: clamp(60px, 6.65vw, 72px);
+  font-size: clamp(64px, 9vw, 132px);
   font-weight: 400;
-  letter-spacing: -0.075em;
+  letter-spacing: -0.06em;
   line-height: 0.92;
   text-align: center;
   transition: left 0.22s ease, transform 0.22s ease, opacity 0.22s ease;
 }
 .sideDiamond {
   position: absolute;
-  top: calc(50vh - 182px);
-  width: 220px;
-  height: 220px;
-  border: 1px dotted #a9a9a9;
+  top: calc(50% - 215px);
+  width: 430px;
+  height: 430px;
+  border: 1px solid #d7d7d7;
   transform: rotate(45deg);
   transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 .sideDiamond--left {
-  left: -105px;
+  left: -225px;
 }
 .sideDiamond--right {
-  right: -105px;
+  right: -225px;
 }
 .heroAction {
   position: absolute;
   z-index: 3;
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 14px;
   padding: 0;
   border: 0;
   background: transparent;
   color: #1a1b1c;
-  font-size: 8px;
-  font-weight: 600;
+  font-size: clamp(18px, 1.5vw, 30px);
+  font-weight: 500;
   line-height: 1;
+  letter-spacing: -0.01em;
   cursor: pointer;
   transition: opacity 0.22s ease, visibility 0.22s ease, transform 0.22s ease;
 }
@@ -73,28 +74,30 @@
   display:none;
 }
 .heroAction--left {
-  top: calc(50vh - 80px);
-  left: 20px;
+  top: 50%;
+  left: 6.5%;
+  transform: translateY(-50%);
 }
 .heroAction--right {
-  top: calc(50vh - 80px);
-  right: 20px;
+  top: 50%;
+  right: 6.5%;
+  transform: translateY(-50%);
 }
 .heroAction__icon {
   position: relative;
-  width: 21px;
-  height: 21px;
+  width: 34px;
+  height: 34px;
   border: 1px solid #1a1b1c;
   transform: rotate(45deg);
-  background: #f8f8f8;
-  flex: 0 0 21px;
+  background: #f2f2f2;
+  flex: 0 0 34px;
 }
 .heroAction__icon::before {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 5px;
-  height: 5px;
+  width: 7px;
+  height: 7px;
   border-top: 1px solid #1a1b1c;
   border-right: 1px solid #1a1b1c;
   content: "";
@@ -107,13 +110,13 @@
 }
 .description {
   position: absolute;
-  left: 20px;
-  bottom: 22px;
+  left: 28px;
+  bottom: 26px;
   margin: 0;
   color: #1a1b1c;
-  font-size: 8px;
+  font-size: clamp(14px, 0.95vw, 22px);
   font-weight: 500;
-  line-height: 1.55;
+  line-height: 1.35;
   text-transform: uppercase;
 }
 
