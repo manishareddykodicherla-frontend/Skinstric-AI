@@ -180,7 +180,7 @@ animation : rotateDiamond 18s linear infinite;
 @media (max-width:768px){
     .content{
         top:180px;
-        left:260px;
+        left:60px;
     }
     .contentpara{
         left:190px;
