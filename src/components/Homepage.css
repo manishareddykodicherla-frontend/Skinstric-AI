@@ -9,14 +9,14 @@
   min-height: calc(100vh - 58px);
 }
 .mainTitle {
-  position: absolute;
-  top: 14vw;
+  position: fixed;
+  top: 54%;
   left: 50%;
   z-index: 2;
   margin: 0;
   transform: translate(-50%, -50%);
   color: #1a1b1c;
-  font-size: clamp(64px, 9vw, 132px);
+  font-size: 40px;
   font-weight: 400;
   letter-spacing: -0.06em;
   line-height: 0.92;
@@ -24,46 +24,52 @@
   transition: left 0.22s ease, transform 0.22s ease, opacity 0.22s ease;
 }
 .homediamond {
-  position: absolute;
+  position: relative;
   inset: 0;
+  
 }
 
 .homediamond1 {
-  position: relative;
-  width: 100%;
+  
+  width: 50%;
   height: 100%;
+  margin-top: 5%;
+  
 }
-
+.homediamond2{
+  width: 50%;
+  height: 100%;
+  margin-top: 5%;
+}
 .homediamond__left {
-  position: absolute;
-  left: clamp(-90px, -7vw, -26px);
-  top: 20%;
+  position: fixed;
+  left: 1%;
+  top:50%;
   transform: translateY(-50%);
-  width: 25vw;
-  max-width: 86%;
-  height: auto;
-  object-fit: contain;
+  width: 18vw;
+  
+  height:100vh;
   z-index: 1;
-  pointer-events: none;
 }
 
 .homediamond--right {
-  position: absolute;
-  right: clamp(-90px, -7vw, -26px);
-  top: 20%;
+  position: fixed;
+  right: 1%;
+  top:50%;
   transform: translateY(-50%);
-  width: 25vw;
-  max-width: 86%;
-  height: auto;
-  object-fit: contain;
+  width: 18vw;
+  
+  height:100vh;
+  
   z-index: 1;
-  pointer-events: none;
+  
 }
 .heroAction {
   position: absolute;
   z-index: 3;
   display: flex;
   align-items: center;
+  justify-content:center;
   gap: 14px;
   padding: 0;
   border: 0;
@@ -80,8 +86,8 @@
 
 .hero--hover-left .heroAction--right,
 .hero--hover-right .heroAction--left,
-.hero--hover-left .sideDiamond,
-.hero--hover-right .sideDiamond {
+.hero--hover-left .homediamond--right,
+.hero--hover-right .homediamond--left {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -97,27 +103,32 @@
 .heroAction--left {
   top: 11vw;
   left: 1vw;
-  transform: translateY(-45%);
+  position:fixed;
+top:48%;
+left:2%;
 }
 .heroAction--right {
   top: 11vw;
   right: 1vw;
-  transform: translateY(-45%);
+  position:fixed;
+  top:48%;
+  right:2%;
+}
+.description1{
+  position:relative;
 }
 .description {
-  position: absolute;
-  left: 28px;
-  bottom: 26px;
+  position: fixed;
+  left:10%;
+  top: 80%;
   margin: 0;
   color: #1a1b1c;
-  font-size: clamp(14px, 0.95vw, 22px);
-  font-weight: 500;
-  line-height: 1.35;
-  text-transform: uppercase;
+  
 }
+/*
 @media (max-width:1024px){
   .mainTitle{
-    font-size:40px;
+    font-size:20px;
     text-align:center;
     top:24vw;
   }
@@ -157,6 +168,7 @@
   transform: translateY(-50%);
 }
 }
+*/
 @media(max-width:768px){
   .sideDiamond{
     display:none;
@@ -186,8 +198,8 @@
     position: absolute;
     display: block;
     border: 1px solid black;
-    width: min(360px, calc(100vw - 56px));
-    height: 420px;
+    width: calc(100% - 25vw);
+    height: calc(50% - 0vw);
     top: 72px;
     left: 50%;
     transform: translateX(-50%);
@@ -196,11 +208,15 @@
 
   .homediamond1 {
     border: 1px solid black;
-    width: calc(100% - 28px);
-    height: calc(100% - 28px);
+    width: calc(100% - 5vw);
+    height:50vw;
     position: absolute;
     top: 14px;
     left: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
 
   .homediamond__left {
@@ -212,10 +228,10 @@
 
   }
   .experience {
-    display: block;
     position: absolute;
-    bottom: 26px;
+    bottom: 24px;
     left: 50%;
+    display: block;
     transform: translateX(-50%);
     padding: 10px 20px;
     border: 1px solid #1a1b1c;
@@ -224,12 +240,13 @@
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.04em;
+    z-index: 3;
   }
   .mainTitle {
     top: 30px;
     left: 50%;
     width: 100%;
-    font-size: 54px;
+    font-size: 20px;
     line-height: 0.9;
     z-index: 2;
     transform: translateX(-50%);
@@ -253,13 +270,13 @@
   }
   .homediamond {
     width: min(300px, calc(100vw - 36px));
-    height: 360px;
+    height: 50%;
     top: 64px;
   }
   .homediamond1 {
     width: calc(100% - 20px);
-    height: calc(100% - 20px);
-    top: 10px;
+    height: 90%;
+    top: 1px;
     left: 10px;
   }
   .homediamond__left {
@@ -270,7 +287,7 @@
   }
   .mainTitle {
     top: 24px;
-    font-size: 42px;
+    font-size: 18px;
     line-height: 0.92;
   }
   .description {
@@ -279,7 +296,9 @@
     line-height: 1.4;
   }
   .experience {
-    bottom: 20px;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 9px 16px;
     font-size: 12px;
   }

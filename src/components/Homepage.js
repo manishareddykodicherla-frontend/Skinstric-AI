@@ -28,12 +28,17 @@ export default function Homepage() {
           <img src={buttin} alt="" className=" heroAction__icon--left" />
           <span>DISCOVER A.I.</span>
         </button>
-
-        <h1 className="mainTitle">
+        <button className="experience" onClick={()=>navigate("/testing")}>EXPERIENCE</button>
+</div>
+<div className="mainTitle">
+        <h1>
           Sophisticated
           <br />
           skincare
         </h1>
+</div>
+<div className="homediamond2">
+
 <img src={left} alt=" " className="homediamond--right"/>
         <button
           className="heroAction heroAction--right"
@@ -46,7 +51,8 @@ export default function Homepage() {
 
           <span>TAKE TEST</span>
         </button>
-
+</div>
+<div className="description1">
         <p className="description">
           SKINSTRIC DEVELOPED AN A.I. THAT CREATES
           <br />
@@ -54,7 +60,6 @@ export default function Homepage() {
           <br />
           WHAT YOUR SKIN NEEDS.
         </p>
-        <button className="experience" onClick={()=>navigate("/testing")}>EXPERIENCE</button>
       </div>
       </div>
       </main>
