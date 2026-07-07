@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Homepage.css";
 import Header from "./Header";
+import right from "../assets/right.png";
+import left from "../assets/Rectangle 2778 (2).png"
 import buttin from "../assets/buttin-icon-shrunk.png";
 import Button from "../assets/button.png";
 export default function Homepage() {
@@ -13,11 +15,10 @@ export default function Homepage() {
       <Header />
 
       <main className={`hero ${hoveredAction ? `hero--hover-${hoveredAction}` : ""}`}>
-        <div className="sideDiamond sideDiamond--left" />
-        <div className="sideDiamond sideDiamond--right" />
+        
 <div className="homediamond">
   <div className="homediamond1">
-    
+    <img src={right} alt="" className="homediamond__left"/>
         <button
           className="heroAction heroAction--left"
           type="button"
@@ -33,7 +34,7 @@ export default function Homepage() {
           <br />
           skincare
         </h1>
-
+<img src={left} alt=" " className="homediamond--right"/>
         <button
           className="heroAction heroAction--right"
           type="button"
