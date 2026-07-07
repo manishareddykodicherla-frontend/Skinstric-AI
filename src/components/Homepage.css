@@ -95,14 +95,14 @@
   display:none;
 }
 .heroAction--left {
-  top: 15vw;
+  top: 11vw;
   left: 1vw;
-  transform: translateY(-50%);
+  transform: translateY(-55%);
 }
 .heroAction--right {
-  top: 15vw;
+  top: 11vw;
   right: 1vw;
-  transform: translateY(-50%);
+  transform: translateY(-55%);
 }
 .description {
   position: absolute;
