@@ -95,12 +95,12 @@
   display:none;
 }
 .heroAction--left {
-  top: 10vw;
+  top: 11vw;
   left: 1vw;
   transform: translateY(-50%);
 }
 .heroAction--right {
-  top: 10vw;
+  top: 11vw;
   right: 1vw;
   transform: translateY(-50%);
 }
