@@ -119,8 +119,43 @@
   .mainTitle{
     font-size:40px;
     text-align:center;
-    top:40%;
+    top:24vw;
   }
+  .homediamond__left{
+  position: absolute;
+  left: clamp(-90px, -7vw, -26px);
+  top: 20%;
+  transform: translateY(-50%);
+  width: 40vw;
+  max-width: 86%;
+  height: auto;
+  object-fit: contain;
+  z-index: 1;
+  pointer-events: none;
+
+  }
+  .homediamond--right {
+  position: absolute;
+  right: clamp(-90px, -7vw, -26px);
+  top: 20%;
+  transform: translateY(-50%);
+  width: 40vw;
+  max-width: 86%;
+  height: auto;
+  object-fit: contain;
+  z-index: 1;
+  pointer-events: none;
+}
+.heroAction--left {
+  top: 25vw;
+  left: 1vw;
+  transform: translateY(-50%);
+}
+.heroAction--right {
+  top: 25vw;
+  right: 14vw;
+  transform: translateY(-50%);
+}
 }
 @media(max-width:768px){
   .sideDiamond{
