@@ -48,12 +48,10 @@ export default function Result() {
             localStorage.setItem('skinstricAnalysis', JSON.stringify(data));
             setIsAnalyzing(false);
 
-            const shouldContinue = window.confirm('Analysis complete! Your image is ready.');
-            if (shouldContinue) {
-                navigate('/Select', {
-                    state: { analysis: data }
-                });
-            }
+            window.alert('Analysis complete! Your image is ready.');
+            navigate('/Select', {
+                state: { analysis: data }
+            });
         } catch (error) {
             console.error('Image upload failed:', error);
             setIsAnalyzing(false);

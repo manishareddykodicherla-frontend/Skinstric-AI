@@ -161,6 +161,9 @@ export default function Summary() {
     const [raceName] = getHighestValue(race);
     const [ageGroup] = getHighestValue(age);
     const [genderName] = getHighestValue(gender);
+    const displayedRaceName = selectedCategory === 'race' && selectedLabel ? selectedLabel : raceName;
+    const displayedAgeGroup = selectedCategory === 'age' && selectedLabel ? selectedLabel : ageGroup;
+    const displayedGenderName = selectedCategory === 'gender' && selectedLabel ? selectedLabel : genderName;
     const selectedValues = selectedCategory === 'age'
         ? age
         : selectedCategory === 'gender'
@@ -203,7 +206,7 @@ export default function Summary() {
                         onClick={() => selectCategory('race', race)}
                     >
                         <p className="race">Race</p>
-                        <h4 className="raceName">{raceName}</h4>
+                        <h4 className="raceName">{displayedRaceName}</h4>
                     </button>
                     <button
                         type="button"
@@ -211,7 +214,7 @@ export default function Summary() {
                         onClick={() => selectCategory('age', age)}
                     >
                         <p>Age</p>
-                        <h4 className="ageGroup">{ageGroup}</h4>
+                        <h4 className="ageGroup">{displayedAgeGroup}</h4>
                     </button>
                     <button
                         type="button"
@@ -219,7 +222,7 @@ export default function Summary() {
                         onClick={() => selectCategory('gender', gender)}
                     >
                         <p>Gender</p>
-                        <h4>{genderName}</h4>
+                        <h4>{displayedGenderName}</h4>
                     </button>
                 </div>
 
