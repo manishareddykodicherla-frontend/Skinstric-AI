@@ -5,11 +5,13 @@
 
 }
 .selectDiamondContainer{
-    width:420px;
-    height:420px;
-    margin-right:460px;
-    position :relative;
-
+    width:50vw;
+    height:50vw;
+    top:50%;
+    left:50%;
+    margin: 0 auto;
+    position :fixed;
+    transform: translate(-50%, -50%);
 }
 .selectDiamond {
   width: 190px;

@@ -85,8 +85,8 @@
 }
 
 .confidenceCircle {
-  width: 320px;
-  height: 320px;
+  width: 31vw;
+  height: 31vw;
   border-radius: 50%;
   display: flex;
   justify-content: center;
