@@ -1,29 +1,24 @@
 .diamond {
-  position: absolute;
-  border: 1px dashed #d8d8d8;
+  position: fixed;
+  border: 2px dashed #d8d8d8;
   transform: rotate(45deg);
-  pointer-events: none;
+  top:20%;
+  left:31%;
 }
   
   .diamond1 {
-    width: 470px;
-    height:470px;
-        top:20px;
-        left:20px;
+    width: 40vw;
+    height: 40vw;
     animation :rotateDiamond 30s linear infinite;
   }
 .diamond2{
-    width:440px;
-    height:440px;
-        top:35px;
-        left:35px;
+    width:39vw;
+    height:39vw;
 animation :rotateDiamond 24s linear infinite;
 }
 .diamond3{
-    width:420px;
-    height:420px;
-        top:50px;
-        left:50px;
+    width:38vw;
+    height:38vw;
     box-sizing: border-box;
 animation : rotateDiamond 18s linear infinite;
 }
@@ -36,7 +31,10 @@ animation : rotateDiamond 18s linear infinite;
     margin: 10px auto 0;
 }
 .nameInput{
-     width: 350px;
+    
+    top:50%;
+    left:50%;
+     width: 50vw;
   border: none;
   border-bottom: 1px solid #999;
   outline: none;
@@ -99,9 +97,9 @@ animation : rotateDiamond 18s linear infinite;
     align-items: center;
 }
 .content {
-        position: absolute;
-    top: 40%;
-        left: 40%;
+        position: fixed;
+    top: 50%;
+        left: 50%;
         transform: translate(-50%, -80%);
         z-index: 10;
         width: min(450px, 96vw);
@@ -117,7 +115,7 @@ animation : rotateDiamond 18s linear infinite;
 transform:translateX(-30%);
 }
 .nameInput {
-  width: 100%;
+  left:1vw;
   border: none;
   border-bottom: 1px solid #999;
   outline: none;
@@ -170,11 +168,17 @@ transform:translateX(-30%);
   .backButton,.proceedButton{
     bottom:80px;
   }
+  .content{
+    position:fixed;
+    top:35%;
+    left:55%;
+    transform: translate(-50%, -50%);
+  }
 }
 @media (max-width:768px){
     .content{
-                top:40%;
-                left:40%;
+                top:35%;
+                left:55%;
                 width: min(420px, 82vw);
                 gap: 12px;
     }
