@@ -7,11 +7,11 @@
 .selectDiamondContainer{
     width:50vw;
     height:50vw;
-    top:50%;
-    left:50%;
+    top:20%;
+    left:40%;
     margin: 0 auto;
     position :fixed;
-    transform: translate(-50%, -50%);
+    
 }
 .selectDiamond {
   width: 190px;
@@ -57,10 +57,10 @@
 
 @media (max-width:1024px){
     .selectDiamondContainer{
-        width:800px;
-        height:800px;
-        top:150px;
-        left:50px;
+        width:80vw;
+        height:80vw;
+        top:20%;
+        left:50%;
 
     }
     .selectDiamond{
