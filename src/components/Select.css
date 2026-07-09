@@ -9,7 +9,7 @@
     height:50vw;
     top:20%;
     left:40%;
-    margin: 0 auto;
+    margin: 56px auto 0;
     position :fixed;
     
 }
@@ -82,9 +82,8 @@
 }
 @media (max-width:768px){
   .selectDiamondContainer {
-    position: relative;
-    top: 20%;
-    left: 10%;;
+    top: 25%;
+    left: 20%;;
     transform: none;
     width: 50vw;
     height: 50vw;
@@ -96,14 +95,51 @@
     }
 } 
 @media (max-width:480px){
+    .pageHighlight{
+        width:100%;
+    }
+    .title{
+        font-size:18px;
+    }
+    .smallTitle{
+        font-size:14px;
+    }
+    .sub-title{
+        font-size:10px;
+    }
     .selectDiamondContainer{
-        width:350px;
-        height:350px;
-        top:150px;
-        left:-150px;
+        width:min(320px, 90vw);
+        height:min(320px, 90vw);
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
     }
     .selectDiamond{
-        width:180px;
-        height:180px;
+        width:min(120px, 34vw);
+        height:min(120px, 34vw);
+    }
+    .selectDiamond span {
+        max-width: 92px;
+        font-size: 11px;
+    }
+    .top{
+        left:50%;
+        top:0;
+        transform: translateX(-50%) rotate(45deg);
+    }
+    .left{
+        left:0;
+        top:50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+    .right{
+        left:100%;
+        top:50%;
+        transform: translate(-100%, -50%) rotate(45deg);
+    }
+    .bottom{
+        left:50%;
+        top:100%;
+        transform: translate(-50%, -100%) rotate(45deg);
     }
 }
