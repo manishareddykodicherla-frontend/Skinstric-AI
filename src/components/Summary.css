@@ -426,12 +426,18 @@
     }
     .summaryFooterInner{
         transform: none;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
         margin-top: 0;
         gap: 10px;
+        border:none;
+        padding:0;
     }
     .footerButton{
         flex: 1;
         width: auto;
         min-height: 44px;
+        padding:0;
     }
 }
