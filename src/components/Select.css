@@ -57,10 +57,10 @@
 
 @media (max-width:1024px){
     .selectDiamondContainer{
-        width:80vw;
-        height:80vw;
+        width:50vw;
+        height:50vw;
         top:20%;
-        left:50%;
+        left:20%;
 
     }
     .selectDiamond{
@@ -83,11 +83,11 @@
 @media (max-width:768px){
   .selectDiamondContainer {
     position: relative;
-    top: auto;
-    left: auto;
+    top: 20%;
+    left: 10%;;
     transform: none;
-    width: min(400px, 86vw);
-    height: min(400px, 86vw);
+    width: 50vw;
+    height: 50vw;
     margin: 40px auto 0;
   }
     .selectDiamond{
